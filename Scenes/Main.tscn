@@ -1,0 +1,84 @@
+[gd_scene load_steps=11 format=3 uid="uid://cn8c2y0bd1sci"]
+
+[ext_resource type="PackedScene" uid="uid://dfiomohb4uoko" path="res://Objects/Player.tscn" id="1_r150o"]
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_r150o"]
+sky_top_color = Color(0.24639893, 0.49837935, 0.7844876, 1)
+sky_horizon_color = Color(1.0964742, 1.233979, 1.1868787, 1)
+ground_bottom_color = Color(0.44313726, 0.7411765, 0.26666668, 1)
+ground_horizon_color = Color(1.0964742, 1.233979, 1.1868787, 1)
+
+[sub_resource type="Sky" id="Sky_idj7w"]
+sky_material = SubResource("ProceduralSkyMaterial_r150o")
+
+[sub_resource type="Environment" id="Environment_kln2b"]
+background_mode = 2
+sky = SubResource("Sky_idj7w")
+tonemap_mode = 2
+glow_enabled = true
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_c1w88"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_r150o"]
+albedo_color = Color(0.4439398, 0.74219275, 0.2656051, 1)
+
+[sub_resource type="WorldBoundaryShape3D" id="WorldBoundaryShape3D_idj7w"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_idj7w"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_kln2b"]
+albedo_color = Color(0.49638885, 0.25021294, 0.031720906, 1)
+
+[sub_resource type="BoxMesh" id="BoxMesh_r150o"]
+
+[node name="Node3D" type="Node3D"]
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_kln2b")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(-0.8660254, -0.43301278, 0.25, 0, 0.49999997, 0.86602545, -0.50000006, 0.75, -0.43301266, 0, 0, 0)
+shadow_enabled = true
+
+[node name="Scenery" type="Node3D" parent="."]
+
+[node name="Ground" type="MeshInstance3D" parent="Scenery"]
+transform = Transform3D(30, 0, 0, 0, 30, 0, 0, 0, 30, 0, 0, 0)
+mesh = SubResource("PlaneMesh_c1w88")
+skeleton = NodePath("../..")
+surface_material_override/0 = SubResource("StandardMaterial3D_r150o")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Scenery/Ground"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Scenery/Ground/StaticBody3D"]
+shape = SubResource("WorldBoundaryShape3D_idj7w")
+
+[node name="Shack" type="MeshInstance3D" parent="Scenery"]
+transform = Transform3D(5, 0, 0, 0, 5, 0, 0, 0, 5, 0, 2.5, 0)
+mesh = SubResource("BoxMesh_idj7w")
+skeleton = NodePath("../..")
+surface_material_override/0 = SubResource("StandardMaterial3D_kln2b")
+
+[node name="Player" parent="." instance=ExtResource("1_r150o")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.4123993, 6.340317, 6.5195837)
+
+[node name="Gardens" type="Node3D" parent="."]
+
+[node name="Temp garden for scale" type="MeshInstance3D" parent="Gardens"]
+transform = Transform3D(20, 0, 0, 0, 1, 0, 0, 0, 20, 15, 0, -15)
+mesh = SubResource("BoxMesh_r150o")
+
+[node name="Temp garden for scale2" type="MeshInstance3D" parent="Gardens"]
+transform = Transform3D(20, 0, 0, 0, 1, 0, 0, 0, 20, -15, 0, -15)
+mesh = SubResource("BoxMesh_r150o")
+skeleton = NodePath("../..")
+
+[node name="Temp garden for scale3" type="MeshInstance3D" parent="Gardens"]
+transform = Transform3D(20, 0, 0, 0, 1, 0, 0, 0, 20, -15, 0, 15)
+mesh = SubResource("BoxMesh_r150o")
+skeleton = NodePath("../..")
+
+[node name="Temp garden for scale4" type="MeshInstance3D" parent="Gardens"]
+transform = Transform3D(20, 0, 0, 0, 1, 0, 0, 0, 20, 15, 0, 15)
+mesh = SubResource("BoxMesh_r150o")
+skeleton = NodePath("../..")
