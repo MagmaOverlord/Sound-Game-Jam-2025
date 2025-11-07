@@ -1,8 +1,19 @@
-[gd_scene load_steps=15 format=3 uid="uid://cn8c2y0bd1sci"]
+[gd_scene load_steps=29 format=3 uid="uid://cn8c2y0bd1sci"]
 
-[ext_resource type="ArrayMesh" uid="uid://dl3f30tbbkrlg" path="res://Assets/Gazebo3.obj" id="1_kln2b"]
+[ext_resource type="ArrayMesh" uid="uid://dl3f30tbbkrlg" path="res://Assets/Gazebo/Gazebo3.obj" id="1_kln2b"]
 [ext_resource type="PackedScene" uid="uid://dfiomohb4uoko" path="res://Objects/Player.tscn" id="1_r150o"]
-[ext_resource type="Material" uid="uid://l5rmwjnw5s2x" path="res://Assets/Gazebo1_Wood.tres" id="2_rgh2o"]
+[ext_resource type="Material" uid="uid://l5rmwjnw5s2x" path="res://Assets/Gazebo/Gazebo1_Wood.tres" id="2_rgh2o"]
+[ext_resource type="ArrayMesh" uid="uid://3bp2d2hpib8x" path="res://Assets/Gardenings/Shovel1.obj" id="4_jw32o"]
+[ext_resource type="Texture2D" uid="uid://b7md56wj4vuo6" path="res://Assets/Gardenings/Shovel_base.png" id="5_50glp"]
+[ext_resource type="Texture2D" uid="uid://d2rfi2p5habns" path="res://Assets/Gardenings/Shovel_metal.png" id="6_vy5pj"]
+[ext_resource type="Texture2D" uid="uid://bh8jcqw81aqt5" path="res://Assets/Gardenings/Shovel_rough.png" id="7_bmxlf"]
+[ext_resource type="ArrayMesh" uid="uid://dvqpfwgp2gxyr" path="res://Assets/Gardenings/Watering Can1.obj" id="8_4kpch"]
+[ext_resource type="Texture2D" uid="uid://m8idh1reuxxd" path="res://Assets/Gardenings/WateringCan_base.png" id="9_grg3l"]
+[ext_resource type="Texture2D" uid="uid://meto4ildtcp" path="res://Assets/Gardenings/WateringCan_metal.png" id="10_frkhe"]
+[ext_resource type="Texture2D" uid="uid://eixe17v1m2a2" path="res://Assets/Gardenings/WateringCan_rough.png" id="11_1p5hy"]
+[ext_resource type="ArrayMesh" uid="uid://bcwtq5wd1sj0s" path="res://Assets/Gardenings/SeedBunch1.obj" id="12_1p5hy"]
+[ext_resource type="Texture2D" uid="uid://dmubne8js8iqt" path="res://Assets/Gardenings/SeedBunch_base.png" id="13_h1m7h"]
+[ext_resource type="Texture2D" uid="uid://def0r6ssbm1x1" path="res://Assets/Gardenings/SeedBunch_rough.png" id="14_erwvk"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_r150o"]
 sky_top_color = Color(0.24639893, 0.49837935, 0.7844876, 1)
@@ -38,6 +49,22 @@ size = Vector3(0.4396286, 0.4074402, 2.0508194)
 size = Vector3(4.015167, 4.024719, 0.6230469)
 
 [sub_resource type="BoxMesh" id="BoxMesh_r150o"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_4kpch"]
+albedo_texture = ExtResource("5_50glp")
+metallic = 1.0
+metallic_texture = ExtResource("6_vy5pj")
+roughness_texture = ExtResource("7_bmxlf")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_h1m7h"]
+albedo_texture = ExtResource("9_grg3l")
+metallic = 1.0
+metallic_texture = ExtResource("10_frkhe")
+roughness_texture = ExtResource("11_1p5hy")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_2w5on"]
+albedo_texture = ExtResource("13_h1m7h")
+roughness_texture = ExtResource("14_erwvk")
 
 [node name="Node3D" type="Node3D"]
 
@@ -120,3 +147,22 @@ skeleton = NodePath("../..")
 transform = Transform3D(20, 0, 0, 0, 1, 0, 0, 0, 20, 15, 0, 15)
 mesh = SubResource("BoxMesh_r150o")
 skeleton = NodePath("../..")
+
+[node name="Gardenings" type="Node3D" parent="."]
+
+[node name="Shovel1" type="MeshInstance3D" parent="Gardenings"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.101881, 1.7158024, 23.358177)
+mesh = ExtResource("4_jw32o")
+skeleton = NodePath("../..")
+surface_material_override/0 = SubResource("StandardMaterial3D_4kpch")
+
+[node name="WateringCan1" type="MeshInstance3D" parent="Gardenings"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.596117, 1.7559938, 18.088047)
+mesh = ExtResource("8_4kpch")
+surface_material_override/0 = SubResource("StandardMaterial3D_h1m7h")
+
+[node name="SeedBunch1" type="MeshInstance3D" parent="Gardenings"]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, -5.2374887, 1.3409591, 20.805655)
+mesh = ExtResource("12_1p5hy")
+skeleton = NodePath("../..")
+surface_material_override/0 = SubResource("StandardMaterial3D_2w5on")

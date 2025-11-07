@@ -1,7 +1,7 @@
 [gd_resource type="StandardMaterial3D" load_steps=3 format=3 uid="uid://l5rmwjnw5s2x"]
 
-[ext_resource type="Texture2D" uid="uid://dpguabg3uagdy" path="res://Assets/Gazebo2_base.png" id="1_j8l1q"]
-[ext_resource type="Texture2D" uid="uid://dfn4vmxmd8pcf" path="res://Assets/Gazebo2_rough.png" id="2_m53um"]
+[ext_resource type="Texture2D" uid="uid://dpguabg3uagdy" path="res://Assets/Gazebo/Gazebo2_base.png" id="1_j8l1q"]
+[ext_resource type="Texture2D" uid="uid://dfn4vmxmd8pcf" path="res://Assets/Gazebo/Gazebo2_rough.png" id="2_m53um"]
 
 [resource]
 albedo_color = Color(0.46618086, 0.4661808, 0.4661808, 1)
