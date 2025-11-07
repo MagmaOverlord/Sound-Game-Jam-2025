@@ -1,6 +1,8 @@
-[gd_scene load_steps=11 format=3 uid="uid://cn8c2y0bd1sci"]
+[gd_scene load_steps=13 format=3 uid="uid://cn8c2y0bd1sci"]
 
+[ext_resource type="ArrayMesh" uid="uid://dl3f30tbbkrlg" path="res://Assets/Gazebo3.obj" id="1_kln2b"]
 [ext_resource type="PackedScene" uid="uid://dfiomohb4uoko" path="res://Objects/Player.tscn" id="1_r150o"]
+[ext_resource type="Material" uid="uid://l5rmwjnw5s2x" path="res://Assets/Gazebo1_Wood.tres" id="2_rgh2o"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_r150o"]
 sky_top_color = Color(0.24639893, 0.49837935, 0.7844876, 1)
@@ -55,9 +57,17 @@ shape = SubResource("WorldBoundaryShape3D_idj7w")
 
 [node name="Shack" type="MeshInstance3D" parent="Scenery"]
 transform = Transform3D(5, 0, 0, 0, 5, 0, 0, 0, 5, 0, 2.5, 0)
+visible = false
 mesh = SubResource("BoxMesh_idj7w")
 skeleton = NodePath("../..")
 surface_material_override/0 = SubResource("StandardMaterial3D_kln2b")
+
+[node name="RigidBody3D" type="RigidBody3D" parent="Scenery"]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Scenery/RigidBody3D"]
+transform = Transform3D(2.5, 0, 0, 0, -1.09278474e-07, -2.5, 0, 2.5, -1.09278474e-07, 0, -1.7396318, 0)
+mesh = ExtResource("1_kln2b")
+surface_material_override/0 = ExtResource("2_rgh2o")
 
 [node name="Player" parent="." instance=ExtResource("1_r150o")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.4123993, 6.340317, 6.5195837)
