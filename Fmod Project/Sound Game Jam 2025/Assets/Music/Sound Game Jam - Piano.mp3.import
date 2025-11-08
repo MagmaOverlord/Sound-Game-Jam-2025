@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://c3gh0il6pb2af"
+path="res://.godot/imported/Sound Game Jam - Piano.mp3-849eeedcb6564a6ce853f18160a61f86.mp3str"
+
+[deps]
+
+source_file="res://Fmod Project/Sound Game Jam 2025/Assets/Music/Sound Game Jam - Piano.mp3"
+dest_files=["res://.godot/imported/Sound Game Jam - Piano.mp3-849eeedcb6564a6ce853f18160a61f86.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

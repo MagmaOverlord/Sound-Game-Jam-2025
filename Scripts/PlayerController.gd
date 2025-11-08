@@ -16,6 +16,11 @@ var t_bob: float = 0.0 #how far along the camera bob we are
 
 func _ready() -> void:
 	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
+	
+	#Triggers Game Audio
+	$FmodEventEmitter3D.play()
+	print("sound test")
+	
 
 func _unhandled_input(event) -> void:
 	if event is InputEventMouseMotion:

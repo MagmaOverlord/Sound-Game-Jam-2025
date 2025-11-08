@@ -8,6 +8,10 @@
 
 config_version=5
 
+[Fmod]
+
+General/banks_path="res://FmodBank/Desktop"
+
 [application]
 
 config/name="Music Farming"
@@ -15,9 +19,17 @@ run/main_scene="uid://cn8c2y0bd1sci"
 config/features=PackedStringArray("4.5", "Forward Plus")
 config/icon="res://icon.svg"
 
+[autoload]
+
+FmodManager="*res://addons/fmod/FmodManager.gd"
+
 [dotnet]
 
 project/assembly_name="Music Farming"
+
+[editor_plugins]
+
+enabled=PackedStringArray("res://addons/fmod/plugin.cfg")
 
 [input]
 

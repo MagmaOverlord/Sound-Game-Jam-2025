@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://b1bahvbirq1g7"
+path="res://.godot/imported/Sound Game Jam - Rodes.mp3-0cc7ed8222f589d3972199e8aeee1601.mp3str"
+
+[deps]
+
+source_file="res://Fmod Project/Sound Game Jam 2025/Assets/Music/Sound Game Jam - Rodes.mp3"
+dest_files=["res://.godot/imported/Sound Game Jam - Rodes.mp3-0cc7ed8222f589d3972199e8aeee1601.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

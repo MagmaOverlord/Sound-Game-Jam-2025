@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.02.00">
+	<object class="Workspace" id="{d85b318e-ae62-4711-a195-0bd23af3d25f}">
+		<property name="builtBanksOutputDirectory">
+			<value>D:/GitHub/Sound-Game-Jam-2025/FmodBank</value>
+		</property>
+		<relationship name="masterEventFolder">
+			<destination>{76cc2906-3633-4411-b36e-4095ba733188}</destination>
+		</relationship>
+		<relationship name="masterTagFolder">
+			<destination>{db0a9c4b-cf6d-4067-9c7d-1c57950a6ee9}</destination>
+		</relationship>
+		<relationship name="masterEffectPresetFolder">
+			<destination>{fbcccfc8-4cc1-4d76-a205-0bec19d4a43c}</destination>
+		</relationship>
+		<relationship name="masterParameterPresetFolder">
+			<destination>{0a1d79c2-4350-4701-b6fa-55b590fcc991}</destination>
+		</relationship>
+		<relationship name="masterBankFolder">
+			<destination>{d2ee2357-e0d9-415e-b186-d85aaa147dc1}</destination>
+		</relationship>
+		<relationship name="masterSandboxFolder">
+			<destination>{f79161f7-ba57-4b2c-9f61-a2e3a78a2387}</destination>
+		</relationship>
+		<relationship name="masterAssetFolder">
+			<destination>{c65f8c0d-01a9-4886-ab08-90fe29b7ea58}</destination>
+		</relationship>
+		<relationship name="mixer">
+			<destination>{de2694a7-85ae-4b03-8a3b-59c936e4a842}</destination>
+		</relationship>
+		<relationship name="profilerSessionFolder">
+			<destination>{752a475e-3a5c-4758-bf03-cdb8723a55d9}</destination>
+		</relationship>
+		<relationship name="platforms">
+			<destination>{4a8dc19d-3db1-4f8e-bdab-639444852126}</destination>
+		</relationship>
+	</object>
+</objects>

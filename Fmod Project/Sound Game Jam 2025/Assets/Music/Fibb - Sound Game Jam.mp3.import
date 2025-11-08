@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://dmerxufxnjetw"
+path="res://.godot/imported/Fibb - Sound Game Jam.mp3-0e976753da524a6ec5d4ecfa69b7c75c.mp3str"
+
+[deps]
+
+source_file="res://Fmod Project/Sound Game Jam 2025/Assets/Music/Fibb - Sound Game Jam.mp3"
+dest_files=["res://.godot/imported/Fibb - Sound Game Jam.mp3-0e976753da524a6ec5d4ecfa69b7c75c.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

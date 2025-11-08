@@ -21,3 +21,13 @@ skeleton = NodePath("../..")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.0653187, 0)
 
 [node name="Camera3D" type="Camera3D" parent="Neck"]
+
+[node name="FmodListener3D" type="FmodListener3D" parent="Neck/Camera3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1.0653187, 0.43062222)
+
+[node name="FmodEventEmitter3D" type="FmodEventEmitter3D" parent="."]
+event_name = "event:/Music/Track with Layers"
+event_guid = "{464b461b-75bd-4a93-a144-cdcb0988d67b}"
+
+[node name="FmodBankLoader" type="FmodBankLoader" parent="."]
+bank_paths = ["res://FmodBank/Desktop/Master.bank"]

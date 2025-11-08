@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://b1xhkjb5e3bn7"
+path="res://.godot/imported/Sound Game Jam - GUITARS.wav-3fec10f97a5433f0cd7e169ad3459c00.sample"
+
+[deps]
+
+source_file="res://Fmod Project/Sound Game Jam 2025/Assets/Music/Sound Game Jam - GUITARS.wav"
+dest_files=["res://.godot/imported/Sound Game Jam - GUITARS.wav-3fec10f97a5433f0cd7e169ad3459c00.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=2

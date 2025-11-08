@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://vwjybghcw8lb"
+path="res://.godot/imported/Sound Game Jam - GUITARS.mp3-9ab57ac61e9d77ec5e4ed8203332d528.mp3str"
+
+[deps]
+
+source_file="res://Fmod Project/Sound Game Jam 2025/Assets/Music/Sound Game Jam - GUITARS.mp3"
+dest_files=["res://.godot/imported/Sound Game Jam - GUITARS.mp3-9ab57ac61e9d77ec5e4ed8203332d528.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

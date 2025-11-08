@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://sjjixcxotab8"
+path="res://.godot/imported/Sound Game Jam - Bass A.wav-679da64e302ccbcdd26ef37b219d220a.sample"
+
+[deps]
+
+source_file="res://Fmod Project/Sound Game Jam 2025/Assets/Music/Sound Game Jam - Bass A.wav"
+dest_files=["res://.godot/imported/Sound Game Jam - Bass A.wav-679da64e302ccbcdd26ef37b219d220a.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=2
