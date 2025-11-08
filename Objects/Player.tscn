@@ -30,4 +30,4 @@ event_name = "event:/Music/Track with Layers"
 event_guid = "{464b461b-75bd-4a93-a144-cdcb0988d67b}"
 
 [node name="FmodBankLoader" type="FmodBankLoader" parent="."]
-bank_paths = ["res://FmodBank/Desktop/Master.bank"]
+bank_paths = ["res://FmodBank/Desktop/Master.strings.bank", "res://FmodBank/Desktop/Master.bank"]

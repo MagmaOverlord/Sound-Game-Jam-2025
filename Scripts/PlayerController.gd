@@ -25,7 +25,6 @@ func _ready() -> void:
 	
 	#Triggers Game Audio
 	$FmodEventEmitter3D.play()
-	print("sound test")
 	
 
 func _unhandled_input(event) -> void:
@@ -58,9 +57,7 @@ func _physics_process(delta) -> void:
 #
 func _process(_delta: float) -> void:
 	#fmodParam3 = int(global_position.distance_to($"../Gardens/Temp garden for scale".global_position))
-	#$FmodEventEmitter3D.set_parameter("Distance3", fmodParam3)
-	print(str($FmodEventEmitter3D.get_parameter("Dist3")))
-	
+	print(str($FmodEventEmitter3D.get_parameter_by_id(1450633991648769841)))
 	
 
 func _headbob(time: float) -> Vector3:
