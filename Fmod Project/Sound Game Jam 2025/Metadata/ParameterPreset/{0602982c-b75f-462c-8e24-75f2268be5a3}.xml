@@ -2,7 +2,7 @@
 <objects serializationModel="Studio.02.02.00">
 	<object class="ParameterPreset" id="{0602982c-b75f-462c-8e24-75f2268be5a3}">
 		<property name="name">
-			<value>Distance to 6</value>
+			<value>Distance6</value>
 		</property>
 		<relationship name="folder">
 			<destination>{0a1d79c2-4350-4701-b6fa-55b590fcc991}</destination>
@@ -16,7 +16,7 @@
 			<value>3</value>
 		</property>
 		<property name="maximum">
-			<value>20</value>
+			<value>15</value>
 		</property>
 		<property name="initialValue">
 			<value>0</value>

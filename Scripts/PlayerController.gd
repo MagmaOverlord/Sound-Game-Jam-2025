@@ -14,6 +14,12 @@ var gravity: float = ProjectSettings.get_setting("physics/3d/default_gravity")
 @onready var camera: Camera3D = $Neck/Camera3D
 var t_bob: float = 0.0 #how far along the camera bob we are
 
+#Audio Stuff
+@onready var fmodParam3 : int
+@onready var fmodParam4 : int
+@onready var fmodParam6 : int
+@onready var fmodParam57 : int
+
 func _ready() -> void:
 	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
 	
@@ -48,6 +54,14 @@ func _physics_process(delta) -> void:
 	camera.transform.origin = _headbob(t_bob)
 	
 	move_and_slide()
+
+#
+func _process(_delta: float) -> void:
+	#fmodParam3 = int(global_position.distance_to($"../Gardens/Temp garden for scale".global_position))
+	#$FmodEventEmitter3D.set_parameter("Distance3", fmodParam3)
+	print(str($FmodEventEmitter3D.get_parameter("Dist3")))
+	
+	
 
 func _headbob(time: float) -> Vector3:
 	var pos: Vector3 = Vector3.ZERO

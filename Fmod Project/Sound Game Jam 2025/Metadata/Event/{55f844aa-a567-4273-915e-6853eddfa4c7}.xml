@@ -8,7 +8,7 @@
 			<value>1</value>
 		</property>
 		<relationship name="folder">
-			<destination>{464b461b-75bd-4a93-a144-cdcb0988d67b}</destination>
+			<destination>{fc91b2f6-f125-4699-b1b1-87cde2fa54fa}</destination>
 		</relationship>
 		<relationship name="mixer">
 			<destination>{88b193c4-c875-472b-8cc4-6ae241fe1588}</destination>
@@ -51,6 +51,9 @@
 		</relationship>
 		<relationship name="panner">
 			<destination>{7a9a88e7-614e-4aed-9ce9-c9fe05c9c37e}</destination>
+		</relationship>
+		<relationship name="output">
+			<destination>{191934ed-a67c-4276-820d-99f79b1ddf76}</destination>
 		</relationship>
 	</object>
 	<object class="EventAutomatableProperties" id="{e40502d2-56a2-46fd-b564-29f1a9a04d93}" />
@@ -157,7 +160,7 @@
 	<object class="MixerBusFader" id="{4846c997-0997-49ad-aa0b-24d2850ad9b7}" />
 	<object class="AutomationPoint" id="{2bf9220e-74d1-490e-9afc-e8a8ed4e9c5a}">
 		<property name="position">
-			<value>20</value>
+			<value>15</value>
 		</property>
 		<property name="value">
 			<value>-80</value>
@@ -165,7 +168,7 @@
 	</object>
 	<object class="AutomationPoint" id="{2af2ab10-31c7-4dfe-940a-ca57566908ba}">
 		<property name="position">
-			<value>0.067390490453013846</value>
+			<value>0.050542867839760384</value>
 		</property>
 		<property name="value">
 			<value>3.81469727e-06</value>
