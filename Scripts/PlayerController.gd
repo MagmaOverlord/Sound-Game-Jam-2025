@@ -61,14 +61,11 @@ func _physics_process(delta) -> void:
 		query.collide_with_areas = true
 		var result = space_state.intersect_ray(query)
 		if result:
-			print(result.collider.get_parent().get_class())
 			if selected == 3 and result.collider.get_parent() is Plant:
 				#the collider is a child of the base node
-				print("watering")
 				result.collider.get_parent().water()
 			elif selected == 1 and result.collider is DirtPile:
 				#the collider is the base node (very intelligent to have it inconsistent, I know)
-				print("planting")
 				var plant = PLANTS[seedSelected].instantiate()
 				get_tree().get_root().add_child(plant)
 				plant.global_position = result.collider.global_position
@@ -93,7 +90,7 @@ func _physics_process(delta) -> void:
 #
 func _process(_delta: float) -> void:
 	#fmodParam3 = int(global_position.distance_to($"../Gardens/Temp garden for scale".global_position))
-	#print(str($FmodEventEmitter3D.get_parameter_by_id(1450633991648769841)))
+	print(str($FmodEventEmitter3D.get_parameter_by_id(1450633991648769841)))
 	
 	# ----
 	# Inputs (non-movemeent)
