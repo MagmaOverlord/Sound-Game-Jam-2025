@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://dwaj1etclv4qp"]
+
+[ext_resource type="Script" uid="uid://bdfqvebpobrt8" path="res://Scripts/FarmPlotManager.gd" id="1_lh5m7"]
+
+[node name="FarmPlot" type="Node3D"]
+script = ExtResource("1_lh5m7")

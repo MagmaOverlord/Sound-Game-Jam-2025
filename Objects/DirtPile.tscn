@@ -1,0 +1,26 @@
+[gd_scene load_steps=5 format=3 uid="uid://bpg43vau6xssk"]
+
+[ext_resource type="Script" uid="uid://bl6032aw6io0v" path="res://Scripts/Pile.gd" id="1_0pkhn"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_0pkhn"]
+size = Vector3(0.7, 0.3074463, 0.7)
+
+[sub_resource type="SphereMesh" id="SphereMesh_0pkhn"]
+radius = 0.3
+height = 0.6
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_shjym"]
+albedo_color = Color(0.44715893, 0.19382095, 0.00050219626, 1)
+
+[node name="DirtPile" type="Area3D"]
+collision_layer = 2
+collision_mask = 2
+script = ExtResource("1_0pkhn")
+
+[node name="DirtPileCollision" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.15079346, 0)
+shape = SubResource("BoxShape3D_0pkhn")
+
+[node name="DirtPileModel" type="MeshInstance3D" parent="."]
+mesh = SubResource("SphereMesh_0pkhn")
+surface_material_override/0 = SubResource("StandardMaterial3D_shjym")

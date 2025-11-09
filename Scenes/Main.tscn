@@ -1,8 +1,9 @@
-[gd_scene load_steps=28 format=3 uid="uid://cn8c2y0bd1sci"]
+[gd_scene load_steps=29 format=3 uid="uid://cn8c2y0bd1sci"]
 
 [ext_resource type="ArrayMesh" uid="uid://dl3f30tbbkrlg" path="res://Assets/Gazebo/Gazebo3.obj" id="1_kln2b"]
 [ext_resource type="PackedScene" uid="uid://dfiomohb4uoko" path="res://Objects/Player.tscn" id="1_r150o"]
 [ext_resource type="Material" uid="uid://l5rmwjnw5s2x" path="res://Assets/Gazebo/Gazebo1_Wood.tres" id="2_rgh2o"]
+[ext_resource type="PackedScene" uid="uid://dwaj1etclv4qp" path="res://Objects/FarmPlot.tscn" id="4_erwvk"]
 [ext_resource type="ArrayMesh" uid="uid://3bp2d2hpib8x" path="res://Assets/Gardenings/Shovel1.obj" id="4_jw32o"]
 [ext_resource type="Texture2D" uid="uid://b7md56wj4vuo6" path="res://Assets/Gardenings/Shovel_base.png" id="5_50glp"]
 [ext_resource type="Texture2D" uid="uid://d2rfi2p5habns" path="res://Assets/Gardenings/Shovel_metal.png" id="6_vy5pj"]
@@ -117,6 +118,9 @@ shape = SubResource("BoxShape3D_rgh2o")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.4123993, 1.4455447, 6.5195837)
 
 [node name="Gardens" type="Node3D" parent="."]
+
+[node name="FarmPlot" parent="Gardens" instance=ExtResource("4_erwvk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.0046625, 0.4952327, -25.035685)
 
 [node name="Temp garden for scale" type="MeshInstance3D" parent="Gardens"]
 transform = Transform3D(20, 0, 0, 0, 1, 0, 0, 0, 20, 15, 0, -15)

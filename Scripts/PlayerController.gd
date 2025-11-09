@@ -7,12 +7,15 @@ const BOB_FREQ: float = 2.0 #camera bob frequency
 const BOB_AMP: float = 0.04 #camera bob amplitude
 const RAY_LENGTH: float = 3.0 #maximum distance to interact with an object
 const PLANT_COLLISION_MASK: int = 2
+#will later contain the plants in the array position of their rhythm (might need to tweak later)
+const PLANTS: Array = [preload("res://Objects/PlantTemplate.tscn")] 
 
 #get gravity from project settings
 var gravity: float = ProjectSettings.get_setting("physics/3d/default_gravity")
 
 #inventory
 var selected = 1
+var seedSelected = 0
 @onready var hotbar = $Neck/Camera3D/Hotbar
 
 #camera stuff
@@ -58,9 +61,18 @@ func _physics_process(delta) -> void:
 		query.collide_with_areas = true
 		var result = space_state.intersect_ray(query)
 		if result:
-			if selected == 3:
+			print(result.collider.get_parent().get_class())
+			if selected == 3 and result.collider.get_parent() is Plant:
+				#the collider is a child of the base node
 				print("watering")
 				result.collider.get_parent().water()
+			elif selected == 1 and result.collider is DirtPile:
+				#the collider is the base node (very intelligent to have it inconsistent, I know)
+				print("planting")
+				var plant = PLANTS[seedSelected].instantiate()
+				get_tree().get_root().add_child(plant)
+				plant.global_position = result.collider.global_position
+				result.collider.disable()
 	
 	#handle directional movement
 	var input_dir: Vector2 = Input.get_vector("move_left", "move_right", "move_forward", "move_back")
@@ -81,7 +93,7 @@ func _physics_process(delta) -> void:
 #
 func _process(_delta: float) -> void:
 	#fmodParam3 = int(global_position.distance_to($"../Gardens/Temp garden for scale".global_position))
-	print(str($FmodEventEmitter3D.get_parameter_by_id(1450633991648769841)))
+	#print(str($FmodEventEmitter3D.get_parameter_by_id(1450633991648769841)))
 	
 	# ----
 	# Inputs (non-movemeent)

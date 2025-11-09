@@ -7,8 +7,7 @@ const FLOWER_VISIBLE_TIME_RATIO = 0.75 #fraction of time when flower becomes vis
 const RHYTHM: int = 4 #changes per plant, this one's for drums I believe
 
 #status tracking
-var isGrown: bool = false
-var isGrowing: bool = false
+var status: String = "seed" #placing, seed, growing, fullgrown
 
 #models & model info
 @onready var seedModel: MeshInstance3D = $SeedModel/Seed
@@ -30,23 +29,21 @@ func _ready() -> void:
 	growTimer.wait_time = GROWTH_TIME
 	seedModel.visible = true
 	
-	#water() #TEMP FOR TESTING
-	
 func _process(delta) -> void:
-	if isGrowing:
+	if status == "growing":
 		var growthRatio = (GROWTH_TIME - growTimer.time_left) / GROWTH_TIME
 		stemModel.position.y = stemModel.scale.y #might need to change for real models
 		if growthRatio >= FLOWER_VISIBLE_TIME_RATIO:
 			if not flowerModel.visible:
 				flowerModel.visible = true
 			flowerModel.position.y = stemModel.position.y * 2 #might need to change for real models
-	elif isGrown:
+	elif status == "fullgrown":
 		pass #play music associated with plant
 
 func water() -> void:
-	if not (isGrowing or isGrown):
+	if status == "seed":
 		seedModel.visible = false
-		isGrowing = true
+		status = "growing"
 		growTimer.start()
 		#set up tween for growing "animation"
 		tween = get_tree().create_tween()
@@ -54,8 +51,6 @@ func water() -> void:
 		tween.tween_property(stemModel, "scale", stemMaxScale, GROWTH_TIME)
 		var timeToFlower = GROWTH_TIME * FLOWER_VISIBLE_TIME_RATIO
 		tween.tween_property(flowerModel, "scale", flowerMaxScale, GROWTH_TIME - timeToFlower).set_delay(timeToFlower)
-		
 
 func _on_growth_timer_timeout() -> void:
-	isGrowing = false
-	isGrown = true
+	status = "fullgrown"
