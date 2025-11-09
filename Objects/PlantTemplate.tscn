@@ -1,0 +1,35 @@
+[gd_scene load_steps=6 format=3 uid="uid://mhvesqtyfnms"]
+
+[ext_resource type="Script" uid="uid://6nujy43eyw4l" path="res://Scripts/Plant.gd" id="1_gep1p"]
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_nyjmo"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_gep1p"]
+albedo_color = Color(0.2305628, 0.516204, 0.1317907, 1)
+
+[sub_resource type="SphereMesh" id="SphereMesh_7xpxm"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ajoep"]
+albedo_color = Color(1, 0.46226078, 0.78567755, 1)
+
+[node name="PlantTemplate" type="Node3D"]
+script = ExtResource("1_gep1p")
+
+[node name="Model" type="Node3D" parent="."]
+
+[node name="PlantStem" type="MeshInstance3D" parent="Model"]
+transform = Transform3D(0.1, 0, 0, 0, 0.3, 0, 0, 0, 0.1, 0, 0.3, 0)
+mesh = SubResource("CylinderMesh_nyjmo")
+skeleton = NodePath("../..")
+surface_material_override/0 = SubResource("StandardMaterial3D_gep1p")
+
+[node name="Flower" type="MeshInstance3D" parent="Model"]
+transform = Transform3D(0.3, 0, 0, 0, 0.3, 0, 0, 0, 0.3, 0, 0.64456326, 0)
+mesh = SubResource("SphereMesh_7xpxm")
+surface_material_override/0 = SubResource("StandardMaterial3D_ajoep")
+
+[node name="GrowTimer" type="Timer" parent="."]
+wait_time = 30.0
+one_shot = true
+
+[connection signal="timeout" from="GrowTimer" to="." method="_on_growth_timer_timeout"]
