@@ -1,6 +1,11 @@
-[gd_scene load_steps=4 format=3 uid="uid://dfiomohb4uoko"]
+[gd_scene load_steps=9 format=3 uid="uid://dfiomohb4uoko"]
 
 [ext_resource type="Script" uid="uid://fwkey25w0im0" path="res://Scripts/PlayerController.gd" id="1_8r7yd"]
+[ext_resource type="Texture2D" uid="uid://cce6qm1paj2rw" path="res://Assets/Icons/SeedsIcon.png" id="2_u60sl"]
+[ext_resource type="Texture2D" uid="uid://xvyh1u2ukuox" path="res://Assets/Icons/ShovelIcon_Temp.png" id="3_t1tke"]
+[ext_resource type="Texture2D" uid="uid://eixe17v1m2a2" path="res://Assets/Gardenings/WateringCan_rough.png" id="4_qwxmt"]
+[ext_resource type="Texture2D" uid="uid://bxtqbydpam1qq" path="res://Assets/Icons/Scissors_Temp.png" id="5_i4q3a"]
+[ext_resource type="Texture2D" uid="uid://cu582f63ovqur" path="res://Assets/crosshair.png" id="6_t1tke"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_8r7yd"]
 
@@ -24,6 +29,47 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.0653187, 0)
 
 [node name="FmodListener3D" type="FmodListener3D" parent="Neck/Camera3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1.0653187, 0.43062222)
+
+[node name="Hotbar" type="ItemList" parent="Neck/Camera3D"]
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -88.06201
+offset_top = -99.0
+offset_right = 88.06299
+offset_bottom = -20.0
+grow_horizontal = 2
+grow_vertical = 0
+item_count = 4
+max_columns = 4
+icon_mode = 0
+icon_scale = 0.75
+fixed_icon_size = Vector2i(50, 50)
+item_0/text = "1"
+item_0/icon = ExtResource("2_u60sl")
+item_1/text = "2"
+item_1/icon = ExtResource("3_t1tke")
+item_2/text = "3"
+item_2/icon = ExtResource("4_qwxmt")
+item_3/text = "4"
+item_3/icon = ExtResource("5_i4q3a")
+
+[node name="TextureRect" type="TextureRect" parent="Neck/Camera3D"]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -20.0
+offset_right = 20.0
+offset_bottom = 20.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("6_t1tke")
+expand_mode = 2
 
 [node name="FmodEventEmitter3D" type="FmodEventEmitter3D" parent="."]
 event_name = "event:/Music/Track with Layers"
