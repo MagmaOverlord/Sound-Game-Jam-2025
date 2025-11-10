@@ -1,12 +1,12 @@
 [gd_scene load_steps=16 format=3 uid="uid://dfiomohb4uoko"]
 
 [ext_resource type="Script" uid="uid://fwkey25w0im0" path="res://Scripts/PlayerController.gd" id="1_8r7yd"]
-[ext_resource type="Texture2D" uid="uid://cce6qm1paj2rw" path="res://Assets/Icons/SeedsIcon.png" id="2_u60sl"]
-[ext_resource type="Texture2D" uid="uid://xvyh1u2ukuox" path="res://Assets/Icons/ShovelIcon_Temp.png" id="3_t1tke"]
-[ext_resource type="Texture2D" uid="uid://eixe17v1m2a2" path="res://Assets/Gardenings/WateringCan_rough.png" id="4_qwxmt"]
+[ext_resource type="Texture2D" uid="uid://n6l0ci4cdq57" path="res://Assets/Icons/SeedIconAlt.png" id="2_jofwx"]
+[ext_resource type="Texture2D" uid="uid://5ynyoeqi2t43" path="res://Assets/Icons/ShovelIcon.png" id="3_qdtrf"]
+[ext_resource type="Texture2D" uid="uid://bjp7wak0ohkgm" path="res://Assets/Icons/WateringCanIcon.png" id="4_a14ne"]
 [ext_resource type="Texture2D" uid="uid://bxtqbydpam1qq" path="res://Assets/Icons/Scissors_Temp.png" id="5_i4q3a"]
 [ext_resource type="Texture2D" uid="uid://cu582f63ovqur" path="res://Assets/crosshair.png" id="6_t1tke"]
-[ext_resource type="PackedScene" path="res://Objects/PauseMenu.tscn" id="7_qwxmt"]
+[ext_resource type="PackedScene" uid="uid://cr4l2c4ewkb8k" path="res://Objects/PauseMenu.tscn" id="7_qwxmt"]
 [ext_resource type="AudioStream" uid="uid://bgvqurgcskyop" path="res://Assets/Audio/Main Loop - Sound Game Jam.mp3" id="8_i4q3a"]
 [ext_resource type="AudioStream" uid="uid://d3eh37ax5np5g" path="res://Assets/Audio/Sound Game Jam - Rodes.wav" id="9_0ryu0"]
 [ext_resource type="AudioStream" uid="uid://c06rquo3sya1c" path="res://Assets/Audio/Sound Game Jam - GUITARS.wav" id="10_jofwx"]
@@ -59,11 +59,11 @@ icon_mode = 0
 icon_scale = 0.75
 fixed_icon_size = Vector2i(50, 50)
 item_0/text = "1"
-item_0/icon = ExtResource("2_u60sl")
+item_0/icon = ExtResource("2_jofwx")
 item_1/text = "2"
-item_1/icon = ExtResource("3_t1tke")
+item_1/icon = ExtResource("3_qdtrf")
 item_2/text = "3"
-item_2/icon = ExtResource("4_qwxmt")
+item_2/icon = ExtResource("4_a14ne")
 item_3/text = "4"
 item_3/icon = ExtResource("5_i4q3a")
 
