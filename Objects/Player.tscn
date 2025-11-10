@@ -71,6 +71,20 @@ grow_vertical = 2
 texture = ExtResource("6_t1tke")
 expand_mode = 2
 
+[node name="SeedSelectedText" type="TextEdit" parent="Neck/Camera3D"]
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -65.5
+offset_top = -148.0
+offset_right = 65.5
+offset_bottom = -110.0
+grow_horizontal = 2
+grow_vertical = 0
+text = "Seed Rhythm: 3"
+
 [node name="FmodEventEmitter3D" type="FmodEventEmitter3D" parent="."]
 event_name = "event:/Music/Track with Layers"
 event_guid = "{464b461b-75bd-4a93-a144-cdcb0988d67b}"

@@ -18,6 +18,7 @@ var gravity: float = ProjectSettings.get_setting("physics/3d/default_gravity")
 var selected = 1
 var seedSelected = 2
 @onready var hotbar = $Neck/Camera3D/Hotbar
+@onready var seedSelectedText = $Neck/Camera3D/SeedSelectedText
 var rng = RandomNumberGenerator.new() #TEMP
 
 #camera stuff
@@ -91,11 +92,7 @@ func _process(_delta: float) -> void:
 	#Set fmod parameters to distance between player and each matching garden
 	#fmodParam3 = int(global_position.distance_to($"../Gardens/Temp garden for scale".global_position))
 	#print(str($FmodEventEmitter3D.get_parameter_by_id(1450633991648769841)))
-<<<<<<< HEAD
-	
-=======
 	print(str($FmodEventEmitter3D["fmod_parameters/Dist3"]))
->>>>>>> 62bd4409c37fa459ea8e34b0c11d1f3e9117c657
 	# ----
 	# Inputs (non-movemeent)
 	# ----

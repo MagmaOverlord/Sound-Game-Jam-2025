@@ -2,7 +2,7 @@ class_name Plant
 extends Node3D
 
 #constants
-const GROWTH_TIME: float = 5 #in seconds
+const GROWTH_TIME: float = 15 #in seconds
 const FLOWER_VISIBLE_TIME_RATIO = 0.75 #fraction of time when flower becomes visible
 @export var RHYTHM: int = 4 #changes per plant
 
