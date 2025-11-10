@@ -47,7 +47,7 @@ func _ready() -> void:
 	plantTracker.fill(false)
 	
 	#Triggers Game Audio
-	$"FmodEventEmitter3D - Music".play()
+	#$"FmodEventEmitter3D - Music".play()
 
 func _unhandled_input(event) -> void:
 	if event is InputEventMouseMotion:
