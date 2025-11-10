@@ -12,7 +12,7 @@ dest_files=["res://.godot/imported/Main Loop - Sound Game Jam.mp3-4b8b3d11da69f4
 
 [params]
 
-loop=false
+loop=true
 loop_offset=0
 bpm=0
 beat_count=0

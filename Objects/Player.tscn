@@ -6,7 +6,7 @@
 [ext_resource type="Texture2D" uid="uid://bjp7wak0ohkgm" path="res://Assets/Icons/WateringCanIcon.png" id="4_a14ne"]
 [ext_resource type="Texture2D" uid="uid://bxtqbydpam1qq" path="res://Assets/Icons/Scissors_Temp.png" id="5_i4q3a"]
 [ext_resource type="Texture2D" uid="uid://cu582f63ovqur" path="res://Assets/crosshair.png" id="6_t1tke"]
-[ext_resource type="PackedScene" uid="uid://cr4l2c4ewkb8k" path="res://Objects/PauseMenu.tscn" id="7_qwxmt"]
+[ext_resource type="PackedScene" path="res://Objects/PauseMenu.tscn" id="7_qwxmt"]
 [ext_resource type="AudioStream" uid="uid://bgvqurgcskyop" path="res://Assets/Audio/Main Loop - Sound Game Jam.mp3" id="8_i4q3a"]
 [ext_resource type="AudioStream" uid="uid://d3eh37ax5np5g" path="res://Assets/Audio/Sound Game Jam - Rodes.wav" id="9_0ryu0"]
 [ext_resource type="AudioStream" uid="uid://c06rquo3sya1c" path="res://Assets/Audio/Sound Game Jam - GUITARS.wav" id="10_jofwx"]
