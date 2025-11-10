@@ -2,19 +2,17 @@
 
 [ext_resource type="Script" uid="uid://6nujy43eyw4l" path="res://Scripts/Plant.gd" id="1_uwmpa"]
 [ext_resource type="ArrayMesh" uid="uid://petmhcdrojwj" path="res://Assets/Gardenings/SeedSingle.obj" id="2_ijc26"]
+[ext_resource type="ArrayMesh" uid="uid://clv07b6q5as88" path="res://Assets/Flowers/RedFlower.obj" id="3_hah5v"]
+[ext_resource type="ArrayMesh" uid="uid://d1dqkhlhfsm7h" path="res://Assets/Flowers/Stem.obj" id="3_ijc26"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_glafq"]
 albedo_color = Color(0.536184, 0.39601275, 0.16048452, 1)
 
-[sub_resource type="CylinderMesh" id="CylinderMesh_nyjmo"]
-
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_gep1p"]
-albedo_color = Color(0.2305628, 0.516204, 0.1317907, 1)
-
-[sub_resource type="SphereMesh" id="SphereMesh_7xpxm"]
-
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ajoep"]
 albedo_color = Color(0.99999994, 0.54903096, 0.1338329, 1)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_hah5v"]
+albedo_color = Color(0, 0.48228574, 0.15578336, 1)
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_7xpxm"]
 
@@ -35,16 +33,15 @@ surface_material_override/0 = SubResource("StandardMaterial3D_glafq")
 
 [node name="PlantModel" type="Node3D" parent="."]
 
-[node name="Stem" type="MeshInstance3D" parent="PlantModel"]
-transform = Transform3D(0.1, 0, 0, 0, 0.3, 0, 0, 0, 0.1, 0, 0.3, 0)
-mesh = SubResource("CylinderMesh_nyjmo")
-skeleton = NodePath("../..")
-surface_material_override/0 = SubResource("StandardMaterial3D_gep1p")
-
 [node name="Flower" type="MeshInstance3D" parent="PlantModel"]
-transform = Transform3D(0.3, 0, 0, 0, 0.3, 0, 0, 0, 0.3, 0, 0.64456326, 0)
-mesh = SubResource("SphereMesh_7xpxm")
+transform = Transform3D(0.05, 0, 0, 0, 0.05, 0, 0, 0, 0.05, 0, 0.82078266, 0)
+mesh = ExtResource("3_hah5v")
 surface_material_override/0 = SubResource("StandardMaterial3D_ajoep")
+
+[node name="Stem" type="MeshInstance3D" parent="PlantModel"]
+transform = Transform3D(0.05, 0, 0, 0, 0.05, 0, 0, 0, 0.05, 0.034105062, 0, 0)
+mesh = ExtResource("3_ijc26")
+surface_material_override/0 = SubResource("StandardMaterial3D_hah5v")
 
 [node name="GrowTimer" type="Timer" parent="."]
 wait_time = 30.0

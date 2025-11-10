@@ -25,7 +25,6 @@ var selected = 1
 var seedSelected = 3
 @onready var hotbar = $Neck/Camera3D/Hotbar
 @onready var seedSelectedText = $Neck/Camera3D/SeedSelectedText
-var rng = RandomNumberGenerator.new() #TEMP
 
 #camera stuff
 @onready var neck: Node3D = $Neck
