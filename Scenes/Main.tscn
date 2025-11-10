@@ -1,4 +1,4 @@
-[gd_scene load_steps=30 format=3 uid="uid://cn8c2y0bd1sci"]
+[gd_scene load_steps=29 format=3 uid="uid://cn8c2y0bd1sci"]
 
 [ext_resource type="ArrayMesh" uid="uid://dl3f30tbbkrlg" path="res://Assets/Gazebo/Gazebo3.obj" id="1_kln2b"]
 [ext_resource type="PackedScene" uid="uid://dfiomohb4uoko" path="res://Objects/Player.tscn" id="1_r150o"]
@@ -16,12 +16,6 @@
 [ext_resource type="Texture2D" uid="uid://dmubne8js8iqt" path="res://Assets/Gardenings/SeedBunch_base.png" id="13_h1m7h"]
 [ext_resource type="Texture2D" uid="uid://def0r6ssbm1x1" path="res://Assets/Gardenings/SeedBunch_rough.png" id="14_erwvk"]
 [ext_resource type="PackedScene" uid="uid://mhvesqtyfnms" path="res://Objects/Plants/Rhythm4Plant.tscn" id="15_h1m7h"]
-
-[sub_resource type="GDScript" id="GDScript_erwvk"]
-script/source = "extends Node3D
-
-#basically just used for pause stuff, to keep it separate and clea
-"
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_r150o"]
 sky_top_color = Color(0.24639893, 0.49837935, 0.7844876, 1)
@@ -70,7 +64,6 @@ albedo_texture = ExtResource("13_h1m7h")
 roughness_texture = ExtResource("14_erwvk")
 
 [node name="Node3D" type="Node3D"]
-script = SubResource("GDScript_erwvk")
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = SubResource("Environment_kln2b")

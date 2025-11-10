@@ -16,6 +16,10 @@ const MAX_PLANT: int = 7 #maximum rhythm
 #get gravity from project settings
 var gravity: float = ProjectSettings.get_setting("physics/3d/default_gravity")
 
+#pause menu
+@onready var pause_menu = $Neck/Camera3D/PauseMenu
+var paused: bool = false
+
 #inventory
 var selected = 1
 var seedSelected = 3
@@ -130,9 +134,24 @@ func _process(_delta: float) -> void:
 	elif Input.is_action_just_pressed("decrease_selected_seed_rhythm"):
 		seedSelected = clamp(seedSelected - 1, MIN_PLANT, MAX_PLANT)
 		seedSelectedText.text = "Seed Rhythm: " + str(seedSelected)
+	elif Input.is_action_just_pressed("pause"):
+		#get_tree().paused = true
+		pauseMenu()
+		
 
 func _headbob(time: float) -> Vector3:
 	var pos: Vector3 = Vector3.ZERO
 	pos.y = sin(time * BOB_FREQ) * BOB_AMP
 	pos.x = cos(time * BOB_FREQ / 2) * BOB_AMP
 	return pos
+
+func pauseMenu() -> void:
+	if paused:
+		pause_menu.hide()
+		Engine.time_scale = 1
+		Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
+	else:
+		pause_menu.show()
+		Engine.time_scale = 0
+		Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
+	paused = !paused
