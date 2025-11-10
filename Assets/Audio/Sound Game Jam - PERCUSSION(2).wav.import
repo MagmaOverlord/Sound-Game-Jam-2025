@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://bs05kphqhocnk"
+path="res://.godot/imported/Sound Game Jam - PERCUSSION(2).wav-41f7122130abf60bf9d69c4edf7472f3.sample"
+
+[deps]
+
+source_file="res://Assets/Audio/Sound Game Jam - PERCUSSION(2).wav"
+dest_files=["res://.godot/imported/Sound Game Jam - PERCUSSION(2).wav-41f7122130abf60bf9d69c4edf7472f3.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=2

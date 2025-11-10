@@ -6,7 +6,7 @@
 [ext_resource type="Texture2D" uid="uid://eixe17v1m2a2" path="res://Assets/Gardenings/WateringCan_rough.png" id="4_qwxmt"]
 [ext_resource type="Texture2D" uid="uid://bxtqbydpam1qq" path="res://Assets/Icons/Scissors_Temp.png" id="5_i4q3a"]
 [ext_resource type="Texture2D" uid="uid://cu582f63ovqur" path="res://Assets/crosshair.png" id="6_t1tke"]
-[ext_resource type="PackedScene" uid="uid://cr4l2c4ewkb8k" path="res://Objects/PauseMenu.tscn" id="7_qwxmt"]
+[ext_resource type="PackedScene" path="res://Objects/PauseMenu.tscn" id="7_qwxmt"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_8r7yd"]
 
