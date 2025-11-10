@@ -29,8 +29,15 @@ func _ready() -> void:
 	growTimer.wait_time = GROWTH_TIME
 	seedModel.visible = true
 	
+<<<<<<< Updated upstream
 func _process(delta) -> void:
 	if status == "growing":
+=======
+	#water() #TEMP FOR TESTING
+	
+func _process(_delta) -> void:
+	if isGrowing:
+>>>>>>> Stashed changes
 		var growthRatio = (GROWTH_TIME - growTimer.time_left) / GROWTH_TIME
 		stemModel.position.y = stemModel.scale.y #might need to change for real models
 		if growthRatio >= FLOWER_VISIBLE_TIME_RATIO:
