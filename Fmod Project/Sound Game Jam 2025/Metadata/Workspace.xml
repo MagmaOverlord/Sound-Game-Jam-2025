@@ -1,10 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<objects serializationModel="Studio.02.02.00">
+<objects serializationModel="Studio.02.03.00">
 	<object class="Workspace" id="{d85b318e-ae62-4711-a195-0bd23af3d25f}">
 		<property name="builtBanksOutputDirectory">
 			<value>D:/GitHub/Sound-Game-Jam-2025/FmodBank</value>
 		</property>
-		<property name="builtBanksEncryptionKey" />
 		<relationship name="masterEventFolder">
 			<destination>{76cc2906-3633-4411-b36e-4095ba733188}</destination>
 		</relationship>

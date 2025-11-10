@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<objects serializationModel="Studio.02.02.00">
+<objects serializationModel="Studio.02.03.00">
 	<object class="ParameterPreset" id="{81e98dcf-ff5b-435a-9cb6-186e3d3bc6be}">
 		<property name="name">
 			<value>Distance3</value>
