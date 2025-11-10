@@ -7,7 +7,7 @@ const BOB_FREQ: float = 2.0 #camera bob frequency
 const BOB_AMP: float = 0.04 #camera bob amplitude
 const RAY_LENGTH: float = 3.0 #maximum distance to interact with an object
 const PLANT_COLLISION_MASK: int = 2
-#will later contain the plants in the array position of their rhythm (might need to tweak later)
+#the plants in the array position of their rhythm (might need to tweak later)
 const PLANTS: Array = [null, null, preload("res://Objects/Plants/Rhythm3Plant.tscn"), preload("res://Objects/Plants/Rhythm4Plant.tscn"), 
 preload("res://Objects/Plants/Rhythm5Plant.tscn"), preload("res://Objects/Plants/Rhythm6Plant.tscn"), preload("res://Objects/Plants/Rhythm7Plant.tscn")] 
 const MIN_PLANT: int = 3 #minimum rhythm
@@ -18,7 +18,7 @@ var gravity: float = ProjectSettings.get_setting("physics/3d/default_gravity")
 
 #inventory
 var selected = 1
-var seedSelected = 2
+var seedSelected = 3
 @onready var hotbar = $Neck/Camera3D/Hotbar
 @onready var seedSelectedText = $Neck/Camera3D/SeedSelectedText
 var rng = RandomNumberGenerator.new() #TEMP
@@ -33,6 +33,7 @@ var fmodParam3 : int
 var fmodParam4 : int
 var fmodParam6 : int
 var fmodParam57 : int
+@onready var plantDetector: Area3D = $PlantDetection
 
 func _ready() -> void:
 	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)

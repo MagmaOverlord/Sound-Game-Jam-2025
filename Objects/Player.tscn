@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://dfiomohb4uoko"]
+[gd_scene load_steps=10 format=3 uid="uid://dfiomohb4uoko"]
 
 [ext_resource type="Script" uid="uid://fwkey25w0im0" path="res://Scripts/PlayerController.gd" id="1_8r7yd"]
 [ext_resource type="Texture2D" uid="uid://cce6qm1paj2rw" path="res://Assets/Icons/SeedsIcon.png" id="2_u60sl"]
@@ -11,7 +11,12 @@
 
 [sub_resource type="CapsuleMesh" id="CapsuleMesh_4ajx2"]
 
+[sub_resource type="SphereShape3D" id="SphereShape3D_t1tke"]
+radius = 30.0
+
 [node name="CharacterBody3D" type="CharacterBody3D"]
+collision_layer = 3
+collision_mask = 3
 script = ExtResource("1_8r7yd")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
@@ -91,3 +96,8 @@ event_guid = "{464b461b-75bd-4a93-a144-cdcb0988d67b}"
 
 [node name="FmodBankLoader" type="FmodBankLoader" parent="."]
 bank_paths = ["res://FmodBank/Desktop/Master.strings.bank", "res://FmodBank/Desktop/Master.bank"]
+
+[node name="PlantDetection" type="Area3D" parent="."]
+
+[node name="PlantDetectionCollision" type="CollisionShape3D" parent="PlantDetection"]
+shape = SubResource("SphereShape3D_t1tke")
