@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://dfiomohb4uoko"]
+[gd_scene load_steps=16 format=3 uid="uid://dfiomohb4uoko"]
 
 [ext_resource type="Script" uid="uid://fwkey25w0im0" path="res://Scripts/PlayerController.gd" id="1_8r7yd"]
 [ext_resource type="Texture2D" uid="uid://cce6qm1paj2rw" path="res://Assets/Icons/SeedsIcon.png" id="2_u60sl"]
@@ -7,6 +7,11 @@
 [ext_resource type="Texture2D" uid="uid://bxtqbydpam1qq" path="res://Assets/Icons/Scissors_Temp.png" id="5_i4q3a"]
 [ext_resource type="Texture2D" uid="uid://cu582f63ovqur" path="res://Assets/crosshair.png" id="6_t1tke"]
 [ext_resource type="PackedScene" path="res://Objects/PauseMenu.tscn" id="7_qwxmt"]
+[ext_resource type="AudioStream" uid="uid://bgvqurgcskyop" path="res://Assets/Audio/Main Loop - Sound Game Jam.mp3" id="8_i4q3a"]
+[ext_resource type="AudioStream" uid="uid://d3eh37ax5np5g" path="res://Assets/Audio/Sound Game Jam - Rodes.wav" id="9_0ryu0"]
+[ext_resource type="AudioStream" uid="uid://c06rquo3sya1c" path="res://Assets/Audio/Sound Game Jam - GUITARS.wav" id="10_jofwx"]
+[ext_resource type="AudioStream" uid="uid://2dtktcxf821p" path="res://Assets/Audio/Sound Game Jam - Piano.wav" id="11_qdtrf"]
+[ext_resource type="AudioStream" uid="uid://d0pgt4lj6u4bo" path="res://Assets/Audio/Sound Game Jam - FiveSEEven(2).wav" id="12_jofwx"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_8r7yd"]
 
@@ -94,10 +99,6 @@ placeholder_text = "Seed Rhythm: 3"
 [node name="PauseMenu" parent="Neck/Camera3D" instance=ExtResource("7_qwxmt")]
 visible = false
 
-[node name="FmodEventEmitter3D - Music" type="FmodEventEmitter3D" parent="."]
-event_name = "event:/Music/Track with Layers"
-event_guid = "{464b461b-75bd-4a93-a144-cdcb0988d67b}"
-
 [node name="FmodBankLoader" type="FmodBankLoader" parent="."]
 bank_paths = ["res://FmodBank/Desktop/Master.strings.bank", "res://FmodBank/Desktop/Master.bank"]
 
@@ -123,3 +124,28 @@ event_guid = "{1ad0f341-7a23-4522-9ecf-90e956d5f8c8}"
 [node name="FmodEventEmitter3D - Water" type="FmodEventEmitter3D" parent="."]
 event_name = "event:/SFX/Water"
 event_guid = "{c668ffea-0cc1-4b74-841e-34118b550d79}"
+
+[node name="AudioStreamPlayer _ Main Loop" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("8_i4q3a")
+volume_db = -1.0
+autoplay = true
+
+[node name="AudioStreamPlayer _ Piano3" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("9_0ryu0")
+volume_db = -80.0
+autoplay = true
+
+[node name="AudioStreamPlayer _ Guitars4" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("10_jofwx")
+volume_db = -80.0
+autoplay = true
+
+[node name="AudioStreamPlayer _ Rodes6" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("11_qdtrf")
+volume_db = -80.0
+autoplay = true
+
+[node name="AudioStreamPlayer _ 5-7" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("12_jofwx")
+volume_db = -80.0
+autoplay = true
