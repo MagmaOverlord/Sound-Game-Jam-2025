@@ -144,7 +144,7 @@ func _headbob(time: float) -> Vector3:
 	pos.x = cos(time * BOB_FREQ / 2) * BOB_AMP
 	
 	#StepTrigger
-	if snappedf(time, 0.1) == 2.0: 
+	if fmod(snappedf(time, 0.1), BOB_FREQ) == 0: 
 		$"FmodEventEmitter3D - Steps".play()
 		
 	return pos
