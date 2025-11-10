@@ -14,6 +14,7 @@ var plantTracker: Array = []
 		_create_grid()
 @export var cellSize: Vector2 = Vector2(1, 1)
 @export var defaultColor: Color = Color.SADDLE_BROWN #temp-ish
+var rng = RandomNumberGenerator.new() #for random orientation
 
 const DIRT_PILE = preload("res://Objects/DirtPile.tscn")
 
@@ -32,6 +33,7 @@ func _create_grid() -> void:
 			plantTracker[height].append(null)
 			var dirtPile = DIRT_PILE.instantiate()
 			dirtPile.farmPos = Vector2i(height, width)
+			dirtPile.rotation_degrees.y = rng.randf_range(0, 360)
 			add_child(dirtPile)
 			
 			var offset = Vector3(width * cellSize.x, 0, height * cellSize.y)
@@ -53,7 +55,5 @@ func plant(plantPreload, farmPos: Vector2i, plantPos: Vector3) -> bool:
 		get_tree().get_root().add_child(plant)
 		plant.global_position = plantPos
 		plantTracker[farmPos.x][farmPos.y] = plant
-		for i in range(plantTracker.size()):
-			print(plantTracker[i])
 	
 	return canPlant

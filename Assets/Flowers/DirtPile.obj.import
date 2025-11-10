@@ -1,0 +1,25 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://cc7cdn0s5va5x"
+path="res://.godot/imported/DirtPile.obj-216d77737fc38cb8b70f6e8704ac18b1.mesh"
+
+[deps]
+
+files=["res://.godot/imported/DirtPile.obj-216d77737fc38cb8b70f6e8704ac18b1.mesh"]
+
+source_file="res://Assets/Flowers/DirtPile.obj"
+dest_files=["res://.godot/imported/DirtPile.obj-216d77737fc38cb8b70f6e8704ac18b1.mesh", "res://.godot/imported/DirtPile.obj-216d77737fc38cb8b70f6e8704ac18b1.mesh"]
+
+[params]
+
+generate_tangents=true
+generate_lods=true
+generate_shadow_mesh=true
+generate_lightmap_uv2=false
+generate_lightmap_uv2_texel_size=0.2
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+force_disable_mesh_compression=false

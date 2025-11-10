@@ -1,4 +1,4 @@
-[gd_scene load_steps=29 format=3 uid="uid://cn8c2y0bd1sci"]
+[gd_scene load_steps=31 format=3 uid="uid://cn8c2y0bd1sci"]
 
 [ext_resource type="ArrayMesh" uid="uid://dl3f30tbbkrlg" path="res://Assets/Gazebo/Gazebo3.obj" id="1_kln2b"]
 [ext_resource type="PackedScene" uid="uid://dfiomohb4uoko" path="res://Objects/Player.tscn" id="1_r150o"]
@@ -15,7 +15,6 @@
 [ext_resource type="ArrayMesh" uid="uid://bcwtq5wd1sj0s" path="res://Assets/Gardenings/SeedBunch1.obj" id="12_1p5hy"]
 [ext_resource type="Texture2D" uid="uid://dmubne8js8iqt" path="res://Assets/Gardenings/SeedBunch_base.png" id="13_h1m7h"]
 [ext_resource type="Texture2D" uid="uid://def0r6ssbm1x1" path="res://Assets/Gardenings/SeedBunch_rough.png" id="14_erwvk"]
-[ext_resource type="PackedScene" uid="uid://mhvesqtyfnms" path="res://Objects/Plants/Rhythm4Plant.tscn" id="15_h1m7h"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_r150o"]
 sky_top_color = Color(0.24639893, 0.49837935, 0.7844876, 1)
@@ -47,6 +46,9 @@ size = Vector3(4.015167, 4.024719, 0.6230469)
 
 [sub_resource type="BoxMesh" id="BoxMesh_r150o"]
 
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_erwvk"]
+albedo_color = Color(0.32218266, 0.1466516, 7.219613e-08, 1)
+
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_4kpch"]
 albedo_texture = ExtResource("5_50glp")
 metallic = 1.0
@@ -63,7 +65,13 @@ roughness_texture = ExtResource("11_1p5hy")
 albedo_texture = ExtResource("13_h1m7h")
 roughness_texture = ExtResource("14_erwvk")
 
-[node name="Node3D" type="Node3D"]
+[sub_resource type="BoxShape3D" id="BoxShape3D_2w5on"]
+size = Vector3(60, 10.229, 1)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_h1m7h"]
+size = Vector3(1, 10.229, 60)
+
+[node name="World" type="Node3D"]
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = SubResource("Environment_kln2b")
@@ -75,7 +83,7 @@ shadow_enabled = true
 [node name="Scenery" type="Node3D" parent="."]
 
 [node name="Ground" type="MeshInstance3D" parent="Scenery"]
-transform = Transform3D(30, 0, 0, 0, 30, 0, 0, 0, 30, 0, 0, 0)
+transform = Transform3D(300, 0, 0, 0, 1, 0, 0, 0, 300, 0, 0, 0)
 mesh = SubResource("PlaneMesh_c1w88")
 skeleton = NodePath("../..")
 surface_material_override/0 = SubResource("StandardMaterial3D_r150o")
@@ -120,35 +128,39 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.4123993, 1.4455447, 6.5195
 [node name="Gardens" type="Node3D" parent="."]
 
 [node name="FarmPlot" parent="Gardens" instance=ExtResource("4_erwvk")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.35, 0.5, -24.65)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.35, 0.125, -24.65)
 
 [node name="FarmPlot2" parent="Gardens" instance=ExtResource("4_erwvk")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.35, 0.5, 5.35)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.35, 0.125, 5.35)
 
 [node name="FarmPlot3" parent="Gardens" instance=ExtResource("4_erwvk")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -24.65, 0.5, 5.35)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -24.65, 0.125, 5.35)
 
 [node name="FarmPlot4" parent="Gardens" instance=ExtResource("4_erwvk")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -24.65, 0.5, -24.65)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -24.65, 0.125, -24.65)
 
 [node name="Temp garden for scale" type="MeshInstance3D" parent="Gardens"]
-transform = Transform3D(20, 0, 0, 0, 1, 0, 0, 0, 20, 15, 0, -15)
+transform = Transform3D(20, 0, 0, 0, 0.25, 0, 0, 0, 20, 15, 0, -15)
 mesh = SubResource("BoxMesh_r150o")
+surface_material_override/0 = SubResource("StandardMaterial3D_erwvk")
 
 [node name="Temp garden for scale2" type="MeshInstance3D" parent="Gardens"]
-transform = Transform3D(20, 0, 0, 0, 1, 0, 0, 0, 20, -15, 0, -15)
+transform = Transform3D(20, 0, 0, 0, 0.25, 0, 0, 0, 20, -15, 0, -15)
 mesh = SubResource("BoxMesh_r150o")
 skeleton = NodePath("../..")
+surface_material_override/0 = SubResource("StandardMaterial3D_erwvk")
 
 [node name="Temp garden for scale3" type="MeshInstance3D" parent="Gardens"]
-transform = Transform3D(20, 0, 0, 0, 1, 0, 0, 0, 20, -15, 0, 15)
+transform = Transform3D(20, 0, 0, 0, 0.25, 0, 0, 0, 20, -15, 0, 15)
 mesh = SubResource("BoxMesh_r150o")
 skeleton = NodePath("../..")
+surface_material_override/0 = SubResource("StandardMaterial3D_erwvk")
 
 [node name="Temp garden for scale4" type="MeshInstance3D" parent="Gardens"]
-transform = Transform3D(20, 0, 0, 0, 1, 0, 0, 0, 20, 15, 0, 15)
+transform = Transform3D(20, 0, 0, 0, 0.25, 0, 0, 0, 20, 15, 0, 15)
 mesh = SubResource("BoxMesh_r150o")
 skeleton = NodePath("../..")
+surface_material_override/0 = SubResource("StandardMaterial3D_erwvk")
 
 [node name="Gardenings" type="Node3D" parent="."]
 visible = false
@@ -170,5 +182,32 @@ mesh = ExtResource("12_1p5hy")
 skeleton = NodePath("../..")
 surface_material_override/0 = SubResource("StandardMaterial3D_2w5on")
 
-[node name="PlantTemplate" parent="." instance=ExtResource("15_h1m7h")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.6880888, 0, 2.169037)
+[node name="OutsideHitboxes" type="Node3D" parent="."]
+
+[node name="SouthWall" type="StaticBody3D" parent="OutsideHitboxes"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 30)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="OutsideHitboxes/SouthWall"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 5, 0)
+shape = SubResource("BoxShape3D_2w5on")
+
+[node name="NorthWall" type="StaticBody3D" parent="OutsideHitboxes"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -30)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="OutsideHitboxes/NorthWall"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 5, 0)
+shape = SubResource("BoxShape3D_2w5on")
+
+[node name="WestWall" type="StaticBody3D" parent="OutsideHitboxes"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -30, 0, 0)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="OutsideHitboxes/WestWall"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 5, 0)
+shape = SubResource("BoxShape3D_h1m7h")
+
+[node name="EastWall" type="StaticBody3D" parent="OutsideHitboxes"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 30, 0, 0)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="OutsideHitboxes/EastWall"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 5, 0)
+shape = SubResource("BoxShape3D_h1m7h")
