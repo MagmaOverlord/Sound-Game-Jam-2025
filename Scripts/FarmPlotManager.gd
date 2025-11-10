@@ -39,9 +39,10 @@ func _create_grid() -> void:
 			var offset = Vector3(width * cellSize.x, 0, height * cellSize.y)
 			dirtPile.global_position = global_position + offset
 
-func plant(plantPreload, farmPos: Vector2i, plantPos: Vector3) -> bool:
+func plant(plantPreload, dirtPile, farmPos: Vector2i, plantPos: Vector3) -> bool:
 	var canPlant: bool = true
 	var plant = plantPreload.instantiate()
+	plant.associatedDirtPile = dirtPile
 	for i in range(plant.RHYTHM):
 		for j in range(plant.RHYTHM):
 			var plant1ToCheck = plantTracker[clamp(farmPos.x + i, 0, farmHeight - 1)][clamp(farmPos.y + j, 0, farmWidth - 1)]

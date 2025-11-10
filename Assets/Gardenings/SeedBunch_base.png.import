@@ -4,15 +4,16 @@ importer="texture"
 type="CompressedTexture2D"
 uid="uid://dmubne8js8iqt"
 path.s3tc="res://.godot/imported/SeedBunch_base.png-ca50d23daa13c9cf4d18cc0b9a82ad85.s3tc.ctex"
+path.etc2="res://.godot/imported/SeedBunch_base.png-ca50d23daa13c9cf4d18cc0b9a82ad85.etc2.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc"],
+"imported_formats": ["s3tc_bptc", "etc2_astc"],
 "vram_texture": true
 }
 
 [deps]
 
 source_file="res://Assets/Gardenings/SeedBunch_base.png"
-dest_files=["res://.godot/imported/SeedBunch_base.png-ca50d23daa13c9cf4d18cc0b9a82ad85.s3tc.ctex"]
+dest_files=["res://.godot/imported/SeedBunch_base.png-ca50d23daa13c9cf4d18cc0b9a82ad85.s3tc.ctex", "res://.godot/imported/SeedBunch_base.png-ca50d23daa13c9cf4d18cc0b9a82ad85.etc2.ctex"]
 
 [params]
 

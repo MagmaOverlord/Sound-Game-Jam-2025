@@ -4,15 +4,16 @@ importer="texture"
 type="CompressedTexture2D"
 uid="uid://dpguabg3uagdy"
 path.s3tc="res://.godot/imported/Gazebo2_base.png-9a0ad9cd6e1a1910b0b15a20a1d123f1.s3tc.ctex"
+path.etc2="res://.godot/imported/Gazebo2_base.png-9a0ad9cd6e1a1910b0b15a20a1d123f1.etc2.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc"],
+"imported_formats": ["s3tc_bptc", "etc2_astc"],
 "vram_texture": true
 }
 
 [deps]
 
 source_file="res://Assets/Gazebo/Gazebo2_base.png"
-dest_files=["res://.godot/imported/Gazebo2_base.png-9a0ad9cd6e1a1910b0b15a20a1d123f1.s3tc.ctex"]
+dest_files=["res://.godot/imported/Gazebo2_base.png-9a0ad9cd6e1a1910b0b15a20a1d123f1.s3tc.ctex", "res://.godot/imported/Gazebo2_base.png-9a0ad9cd6e1a1910b0b15a20a1d123f1.etc2.ctex"]
 
 [params]
 

@@ -62,6 +62,7 @@ func _physics_process(delta) -> void:
 	
 	#detect plants in vicinity
 	var items_found = plantDetector.get_overlapping_bodies()
+	plantTracker.fill(false)
 	for item in items_found:
 		if item.get_parent() is Plant and item.get_parent().status == "fullgrown":
 			plantTracker[item.get_parent().RHYTHM - 1] = true
@@ -82,6 +83,11 @@ func _physics_process(delta) -> void:
 			if selected == 3 and result.collider.get_parent() is Plant:
 				#the collider is a child of the base node
 				result.collider.get_parent().water()
+			elif selected == 2 and result.collider.get_parent() is Plant:
+				#remove plant (easy) and add back dirt pile (harder)
+				result.collider.get_parent().associatedDirtPile.enable()
+				result.collider.get_parent().queue_free()
+				pass
 			elif selected == 1 and result.collider is DirtPile:
 				#the collider is the base node (very intelligent to have it inconsistent, I know)
 				result.collider.plant(PLANTS[seedSelected - 1])

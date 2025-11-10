@@ -4,15 +4,16 @@ importer="texture"
 type="CompressedTexture2D"
 uid="uid://bh8jcqw81aqt5"
 path.s3tc="res://.godot/imported/Shovel_rough.png-d74b7fa5b18d3448070fc6635419ec5b.s3tc.ctex"
+path.etc2="res://.godot/imported/Shovel_rough.png-d74b7fa5b18d3448070fc6635419ec5b.etc2.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc"],
+"imported_formats": ["s3tc_bptc", "etc2_astc"],
 "vram_texture": true
 }
 
 [deps]
 
 source_file="res://Assets/Gardenings/Shovel_rough.png"
-dest_files=["res://.godot/imported/Shovel_rough.png-d74b7fa5b18d3448070fc6635419ec5b.s3tc.ctex"]
+dest_files=["res://.godot/imported/Shovel_rough.png-d74b7fa5b18d3448070fc6635419ec5b.s3tc.ctex", "res://.godot/imported/Shovel_rough.png-d74b7fa5b18d3448070fc6635419ec5b.etc2.ctex"]
 
 [params]
 

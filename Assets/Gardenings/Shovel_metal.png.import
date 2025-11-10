@@ -4,15 +4,16 @@ importer="texture"
 type="CompressedTexture2D"
 uid="uid://d2rfi2p5habns"
 path.s3tc="res://.godot/imported/Shovel_metal.png-70a8600aecd1dc54db9f582c2a3cd4e3.s3tc.ctex"
+path.etc2="res://.godot/imported/Shovel_metal.png-70a8600aecd1dc54db9f582c2a3cd4e3.etc2.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc"],
+"imported_formats": ["s3tc_bptc", "etc2_astc"],
 "vram_texture": true
 }
 
 [deps]
 
 source_file="res://Assets/Gardenings/Shovel_metal.png"
-dest_files=["res://.godot/imported/Shovel_metal.png-70a8600aecd1dc54db9f582c2a3cd4e3.s3tc.ctex"]
+dest_files=["res://.godot/imported/Shovel_metal.png-70a8600aecd1dc54db9f582c2a3cd4e3.s3tc.ctex", "res://.godot/imported/Shovel_metal.png-70a8600aecd1dc54db9f582c2a3cd4e3.etc2.ctex"]
 
 [params]
 

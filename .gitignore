@@ -18,3 +18,5 @@ mono_crash.*.json
 Scripts/Plant.gd
 Scripts/Plant.gd
 addons/fmod/libs/windows/~libGodotFmod.windows.editor.x86_64.dll
+
+/Exports

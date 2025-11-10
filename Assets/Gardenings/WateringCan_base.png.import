@@ -4,15 +4,16 @@ importer="texture"
 type="CompressedTexture2D"
 uid="uid://m8idh1reuxxd"
 path.s3tc="res://.godot/imported/WateringCan_base.png-67dea3afe8f2824dc255f2ab7a635d8a.s3tc.ctex"
+path.etc2="res://.godot/imported/WateringCan_base.png-67dea3afe8f2824dc255f2ab7a635d8a.etc2.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc"],
+"imported_formats": ["s3tc_bptc", "etc2_astc"],
 "vram_texture": true
 }
 
 [deps]
 
 source_file="res://Assets/Gardenings/WateringCan_base.png"
-dest_files=["res://.godot/imported/WateringCan_base.png-67dea3afe8f2824dc255f2ab7a635d8a.s3tc.ctex"]
+dest_files=["res://.godot/imported/WateringCan_base.png-67dea3afe8f2824dc255f2ab7a635d8a.s3tc.ctex", "res://.godot/imported/WateringCan_base.png-67dea3afe8f2824dc255f2ab7a635d8a.etc2.ctex"]
 
 [params]
 

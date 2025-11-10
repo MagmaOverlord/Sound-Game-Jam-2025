@@ -16,7 +16,7 @@ func get_rect() -> Rect2:
 	return Rect2(Vector2(global_position.x, global_position.y), pileSize)
 
 func plant(plant) -> void:
-	var shouldDisable: bool = get_parent().plant(plant, farmPos, global_position)
+	var shouldDisable: bool = get_parent().plant(plant, self, farmPos, global_position)
 	if shouldDisable:
 		disable()
 
