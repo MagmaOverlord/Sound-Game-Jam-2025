@@ -32,10 +32,10 @@ var seedSelected = 3
 var t_bob: float = 0.0 #how far along the camera bob we are
 
 #Audio Stuff
-var fmodParam3 : int
-var fmodParam4 : int
-var fmodParam6 : int
-var fmodParam57 : int
+var vol3 : int = -80
+var vol4 : int = -80
+var vol6 : int = -80
+var vol57 : int = -80
 var plantTracker: Array = []
 @onready var plantDetector: Area3D = $PlantDetection
 
@@ -108,9 +108,33 @@ func _physics_process(delta) -> void:
 
 #
 func _process(_delta: float) -> void:
-	#Set fmod parameters to distance between player and each matching garden
-	#fmodParam3 = int(global_position.distance_to($"../Gardens/Temp garden for scale".global_position))
+	if plantTracker[2] :
+		if $"AudioStreamPlayer _ Piano3".volume_db < -2.0 :
+			$"AudioStreamPlayer _ Piano3".volume_db += 0.1
+	else :
+		if $"AudioStreamPlayer _ Piano3".volume_db > -80.0 :
+			$"AudioStreamPlayer _ Piano3".volume_db -= 0.1
 	
+	if plantTracker[3] :
+		if $"AudioStreamPlayer _ Guitars4".volume_db < -2.0 :
+			$"AudioStreamPlayer _ Guitars4".volume_db += 0.1
+	else :
+		if $"AudioStreamPlayer _ Guitars4".volume_db > -80.0 :
+			$"AudioStreamPlayer _ Guitars4".volume_db -= 0.1
+			
+	if plantTracker[4] :
+		if $"AudioStreamPlayer _ 5-7".volume_db < -2.0 :
+			$"AudioStreamPlayer _ 5-7".volume_db += 0.1
+	else :
+		if $"AudioStreamPlayer _ 5-7".volume_db > -80.0 :
+			$"AudioStreamPlayer _ 5-7".volume_db -= 0.1
+			
+	if plantTracker[5] :
+		if $"AudioStreamPlayer _ Rodes6".volume_db < -2.0 :
+			$"AudioStreamPlayer _ Rodes6".volume_db += 0.1
+	else :
+		if $"AudioStreamPlayer _ Rodes6".volume_db > -80.0 :
+			$"AudioStreamPlayer _ Rodes6".volume_db -= 0.1
 	# ----
 	# Inputs (non-movemeent)
 	# ----
@@ -156,3 +180,6 @@ func pauseMenu() -> void:
 		Engine.time_scale = 0
 		Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
 	paused = !paused
+	
+#func _fade_in(Audio):
+#	if vol
