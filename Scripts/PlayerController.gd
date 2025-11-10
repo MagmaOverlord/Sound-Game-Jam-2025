@@ -33,11 +33,14 @@ var fmodParam3 : int
 var fmodParam4 : int
 var fmodParam6 : int
 var fmodParam57 : int
+var plantTracker: Array = []
 @onready var plantDetector: Area3D = $PlantDetection
 
 func _ready() -> void:
 	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
 	hotbar.select(0)
+	plantTracker.resize(PLANTS.size())
+	plantTracker.fill(false)
 	
 	#Triggers Game Audio
 	$FmodEventEmitter3D.play()
@@ -53,6 +56,13 @@ func _physics_process(delta) -> void:
 	var direction: Vector3 = Vector3.ZERO
 	if not is_on_floor():
 		velocity.y -= gravity * delta
+	
+	#detect plants in vicinity
+	var items_found = plantDetector.get_overlapping_bodies()
+	for item in items_found:
+		if item.get_parent() is Plant and item.get_parent().status == "fullgrown":
+			plantTracker[item.get_parent().RHYTHM - 1] = true
+	print(plantTracker)
 	
 	#handle raycasts
 	#actions
@@ -94,15 +104,10 @@ func _physics_process(delta) -> void:
 func _process(_delta: float) -> void:
 	#Set fmod parameters to distance between player and each matching garden
 	#fmodParam3 = int(global_position.distance_to($"../Gardens/Temp garden for scale".global_position))
-<<<<<<< HEAD
 	#print(str($FmodEventEmitter3D.get_parameter_by_id(1450633991648769841)))
 	#print(str($FmodEventEmitter3D["fmod_parameters/Dist3"]))
-	#print(str($FmodEventEmitter3D.get_parameter("Dist3")))
-	print(str($FmodEventEmitter3D.get_event_name()))
-=======
 	print(str($FmodEventEmitter3D.get_parameter("Dist3")))
 	#print(str($FmodEventEmitter3D.get_event_name()))
->>>>>>> StrangeBranchNoRealChanges
 	# ----
 	# Inputs (non-movemeent)
 	# ----
