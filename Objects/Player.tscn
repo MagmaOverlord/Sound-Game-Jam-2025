@@ -98,6 +98,8 @@ event_guid = "{464b461b-75bd-4a93-a144-cdcb0988d67b}"
 bank_paths = ["res://FmodBank/Desktop/Master.strings.bank", "res://FmodBank/Desktop/Master.bank"]
 
 [node name="PlantDetection" type="Area3D" parent="."]
+collision_layer = 2
+collision_mask = 2
 
 [node name="PlantDetectionCollision" type="CollisionShape3D" parent="PlantDetection"]
 shape = SubResource("SphereShape3D_t1tke")
