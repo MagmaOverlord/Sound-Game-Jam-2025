@@ -41,14 +41,14 @@ var plantTracker: Array = []
 @onready var plantDetector: Area3D = $PlantDetection
 
 func _ready() -> void:
+	pause_menu.hide()
 	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
 	hotbar.select(0)
 	plantTracker.resize(PLANTS.size())
 	plantTracker.fill(false)
 	
 	#Triggers Game Audio
-	$FmodEventEmitter3D.play()
-	
+	$"FmodEventEmitter3D - Music".play()
 
 func _unhandled_input(event) -> void:
 	if event is InputEventMouseMotion:
@@ -100,6 +100,8 @@ func _physics_process(delta) -> void:
 	#head bob
 	t_bob += delta * velocity.length() * float(is_on_floor())
 	camera.transform.origin = _headbob(t_bob)
+	#stepping effect
+	
 	
 	move_and_slide()
 
@@ -107,10 +109,7 @@ func _physics_process(delta) -> void:
 func _process(_delta: float) -> void:
 	#Set fmod parameters to distance between player and each matching garden
 	#fmodParam3 = int(global_position.distance_to($"../Gardens/Temp garden for scale".global_position))
-	#print(str($FmodEventEmitter3D.get_parameter_by_id(1450633991648769841)))
-	#print(str($FmodEventEmitter3D["fmod_parameters/Dist3"]))
-	print(str($FmodEventEmitter3D.get_parameter("Dist3")))
-	#print(str($FmodEventEmitter3D.get_event_name()))
+	
 	# ----
 	# Inputs (non-movemeent)
 	# ----
@@ -143,6 +142,11 @@ func _headbob(time: float) -> Vector3:
 	var pos: Vector3 = Vector3.ZERO
 	pos.y = sin(time * BOB_FREQ) * BOB_AMP
 	pos.x = cos(time * BOB_FREQ / 2) * BOB_AMP
+	
+	#StepTrigger
+	if snappedf(time, 0.1) == 2.0: 
+		$"FmodEventEmitter3D - Steps".play()
+		
 	return pos
 
 func pauseMenu() -> void:

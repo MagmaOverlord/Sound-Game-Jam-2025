@@ -34,7 +34,6 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.0653187, 0)
 [node name="Camera3D" type="Camera3D" parent="Neck"]
 
 [node name="FmodListener3D" type="FmodListener3D" parent="Neck/Camera3D"]
-process_mode = 3
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1.0653187, 0.43062222)
 
 [node name="Hotbar" type="ItemList" parent="Neck/Camera3D"]
@@ -94,23 +93,13 @@ placeholder_text = "Seed Rhythm: 3"
 
 [node name="PauseMenu" parent="Neck/Camera3D" instance=ExtResource("7_qwxmt")]
 visible = false
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-scale = Vector2(2, 2)
-size_flags_horizontal = 4
-size_flags_vertical = 4
 
-[node name="FmodEventEmitter3D" type="FmodEventEmitter3D" parent="."]
+[node name="FmodEventEmitter3D - Music" type="FmodEventEmitter3D" parent="."]
 event_name = "event:/Music/Track with Layers"
 event_guid = "{464b461b-75bd-4a93-a144-cdcb0988d67b}"
-process_mode = 3
 
 [node name="FmodBankLoader" type="FmodBankLoader" parent="."]
 bank_paths = ["res://FmodBank/Desktop/Master.strings.bank", "res://FmodBank/Desktop/Master.bank"]
-process_mode = 3
 
 [node name="PlantDetection" type="Area3D" parent="."]
 collision_layer = 2
@@ -118,3 +107,19 @@ collision_mask = 2
 
 [node name="PlantDetectionCollision" type="CollisionShape3D" parent="PlantDetection"]
 shape = SubResource("SphereShape3D_t1tke")
+
+[node name="FmodEventEmitter3D - Steps" type="FmodEventEmitter3D" parent="."]
+event_name = "event:/SFX/Steps"
+event_guid = "{92a773f7-4711-45a5-860a-289ef6eb0b21}"
+
+[node name="FmodEventEmitter3D - Shovel" type="FmodEventEmitter3D" parent="."]
+event_name = "event:/SFX/Shovel"
+event_guid = "{aa5c1fdd-3072-4d70-82bd-82fc7ca328e5}"
+
+[node name="FmodEventEmitter3D - Dirt" type="FmodEventEmitter3D" parent="."]
+event_name = "event:/SFX/Dirt"
+event_guid = "{1ad0f341-7a23-4522-9ecf-90e956d5f8c8}"
+
+[node name="FmodEventEmitter3D - Water" type="FmodEventEmitter3D" parent="."]
+event_name = "event:/SFX/Water"
+event_guid = "{c668ffea-0cc1-4b74-841e-34118b550d79}"
