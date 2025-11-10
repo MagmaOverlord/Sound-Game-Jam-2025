@@ -8,15 +8,17 @@ const BOB_AMP: float = 0.04 #camera bob amplitude
 const RAY_LENGTH: float = 3.0 #maximum distance to interact with an object
 const PLANT_COLLISION_MASK: int = 2
 #will later contain the plants in the array position of their rhythm (might need to tweak later)
-const PLANTS: Array = [preload("res://Objects/PlantTemplate.tscn")] 
+const PLANTS: Array = [null, null, preload("res://Objects/Plants/Rhythm3Plant.tscn"), preload("res://Objects/Plants/Rhythm4Plant.tscn"), 
+preload("res://Objects/Plants/Rhythm5Plant.tscn"), preload("res://Objects/Plants/Rhythm6Plant.tscn"), preload("res://Objects/Plants/Rhythm7Plant.tscn")] 
 
 #get gravity from project settings
 var gravity: float = ProjectSettings.get_setting("physics/3d/default_gravity")
 
 #inventory
 var selected = 1
-var seedSelected = 0
+var seedSelected = 2
 @onready var hotbar = $Neck/Camera3D/Hotbar
+var rng = RandomNumberGenerator.new() #TEMP
 
 #camera stuff
 @onready var neck: Node3D = $Neck
@@ -66,10 +68,7 @@ func _physics_process(delta) -> void:
 				result.collider.get_parent().water()
 			elif selected == 1 and result.collider is DirtPile:
 				#the collider is the base node (very intelligent to have it inconsistent, I know)
-				var plant = PLANTS[seedSelected].instantiate()
-				get_tree().get_root().add_child(plant)
-				plant.global_position = result.collider.global_position
-				result.collider.disable()
+				result.collider.plant(PLANTS[seedSelected])
 	
 	#handle directional movement
 	var input_dir: Vector2 = Input.get_vector("move_left", "move_right", "move_forward", "move_back")
@@ -90,7 +89,7 @@ func _physics_process(delta) -> void:
 #
 func _process(_delta: float) -> void:
 	#fmodParam3 = int(global_position.distance_to($"../Gardens/Temp garden for scale".global_position))
-	print(str($FmodEventEmitter3D.get_parameter_by_id(1450633991648769841)))
+	#print(str($FmodEventEmitter3D.get_parameter_by_id(1450633991648769841)))
 	
 	# ----
 	# Inputs (non-movemeent)
@@ -100,6 +99,8 @@ func _process(_delta: float) -> void:
 	if Input.is_action_just_pressed("select_seeds"):
 		selected = 1
 		hotbar.select(0)
+		#TEMP, to test plant types
+		seedSelected = rng.randi_range(2, 6)
 	elif Input.is_action_just_pressed("select_shovel"):
 		selected = 2
 		hotbar.select(1)

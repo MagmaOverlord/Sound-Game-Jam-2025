@@ -15,7 +15,7 @@
 [ext_resource type="ArrayMesh" uid="uid://bcwtq5wd1sj0s" path="res://Assets/Gardenings/SeedBunch1.obj" id="12_1p5hy"]
 [ext_resource type="Texture2D" uid="uid://dmubne8js8iqt" path="res://Assets/Gardenings/SeedBunch_base.png" id="13_h1m7h"]
 [ext_resource type="Texture2D" uid="uid://def0r6ssbm1x1" path="res://Assets/Gardenings/SeedBunch_rough.png" id="14_erwvk"]
-[ext_resource type="PackedScene" uid="uid://mhvesqtyfnms" path="res://Objects/PlantTemplate.tscn" id="15_h1m7h"]
+[ext_resource type="PackedScene" uid="uid://mhvesqtyfnms" path="res://Objects/Plants/Rhythm4Plant.tscn" id="15_h1m7h"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_r150o"]
 sky_top_color = Color(0.24639893, 0.49837935, 0.7844876, 1)
