@@ -83,7 +83,7 @@ offset_right = 65.5
 offset_bottom = -110.0
 grow_horizontal = 2
 grow_vertical = 0
-text = "Seed Rhythm: 3"
+placeholder_text = "Seed Rhythm: 3"
 
 [node name="FmodEventEmitter3D" type="FmodEventEmitter3D" parent="."]
 event_name = "event:/Music/Track with Layers"

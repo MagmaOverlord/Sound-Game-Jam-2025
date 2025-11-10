@@ -10,6 +10,8 @@ const PLANT_COLLISION_MASK: int = 2
 #will later contain the plants in the array position of their rhythm (might need to tweak later)
 const PLANTS: Array = [null, null, preload("res://Objects/Plants/Rhythm3Plant.tscn"), preload("res://Objects/Plants/Rhythm4Plant.tscn"), 
 preload("res://Objects/Plants/Rhythm5Plant.tscn"), preload("res://Objects/Plants/Rhythm6Plant.tscn"), preload("res://Objects/Plants/Rhythm7Plant.tscn")] 
+const MIN_PLANT: int = 3 #minimum rhythm
+const MAX_PLANT: int = 7 #maximum rhythm
 
 #get gravity from project settings
 var gravity: float = ProjectSettings.get_setting("physics/3d/default_gravity")
@@ -69,7 +71,7 @@ func _physics_process(delta) -> void:
 				result.collider.get_parent().water()
 			elif selected == 1 and result.collider is DirtPile:
 				#the collider is the base node (very intelligent to have it inconsistent, I know)
-				result.collider.plant(PLANTS[seedSelected])
+				result.collider.plant(PLANTS[seedSelected - 1])
 	
 	#handle directional movement
 	var input_dir: Vector2 = Input.get_vector("move_left", "move_right", "move_forward", "move_back")
@@ -92,7 +94,7 @@ func _process(_delta: float) -> void:
 	#Set fmod parameters to distance between player and each matching garden
 	#fmodParam3 = int(global_position.distance_to($"../Gardens/Temp garden for scale".global_position))
 	#print(str($FmodEventEmitter3D.get_parameter_by_id(1450633991648769841)))
-	print(str($FmodEventEmitter3D["fmod_parameters/Dist3"]))
+	#print(str($FmodEventEmitter3D["fmod_parameters/Dist3"]))
 	# ----
 	# Inputs (non-movemeent)
 	# ----
@@ -101,8 +103,6 @@ func _process(_delta: float) -> void:
 	if Input.is_action_just_pressed("select_seeds"):
 		selected = 1
 		hotbar.select(0)
-		#TEMP, to test plant types
-		seedSelected = rng.randi_range(2, 6)
 	elif Input.is_action_just_pressed("select_shovel"):
 		selected = 2
 		hotbar.select(1)
@@ -112,6 +112,12 @@ func _process(_delta: float) -> void:
 	elif Input.is_action_just_pressed("select_scissors"):
 		selected = 4
 		hotbar.select(3)
+	elif Input.is_action_just_pressed("increase_selected_seed_rhythm"):
+		seedSelected = clamp(seedSelected + 1, MIN_PLANT, MAX_PLANT)
+		seedSelectedText.text = "Seed Rhythm: " + str(seedSelected)
+	elif Input.is_action_just_pressed("decrease_selected_seed_rhythm"):
+		seedSelected = clamp(seedSelected - 1, MIN_PLANT, MAX_PLANT)
+		seedSelectedText.text = "Seed Rhythm: " + str(seedSelected)
 
 func _headbob(time: float) -> Vector3:
 	var pos: Vector3 = Vector3.ZERO
