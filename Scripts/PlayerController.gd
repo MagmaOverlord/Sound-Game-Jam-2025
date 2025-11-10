@@ -62,7 +62,6 @@ func _physics_process(delta) -> void:
 	for item in items_found:
 		if item.get_parent() is Plant and item.get_parent().status == "fullgrown":
 			plantTracker[item.get_parent().RHYTHM - 1] = true
-	print(plantTracker)
 	
 	#handle raycasts
 	#actions
