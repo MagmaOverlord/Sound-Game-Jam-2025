@@ -100,8 +100,10 @@ func _physics_process(delta) -> void:
 	#head bob
 	t_bob += delta * velocity.length() * float(is_on_floor())
 	camera.transform.origin = _headbob(t_bob)
-	#stepping effect
 	
+	#stepping effect
+	if input_dir != Vector2.ZERO and fmod(snappedf(t_bob, 0.1), BOB_FREQ * 2) == 0: 
+		$"FmodEventEmitter3D - Steps".play()
 	
 	move_and_slide()
 
@@ -143,10 +145,6 @@ func _headbob(time: float) -> Vector3:
 	pos.y = sin(time * BOB_FREQ) * BOB_AMP
 	pos.x = cos(time * BOB_FREQ / 2) * BOB_AMP
 	
-	#StepTrigger
-	if fmod(snappedf(time, 0.1), BOB_FREQ) == 0: 
-		$"FmodEventEmitter3D - Steps".play()
-		
 	return pos
 
 func pauseMenu() -> void:
