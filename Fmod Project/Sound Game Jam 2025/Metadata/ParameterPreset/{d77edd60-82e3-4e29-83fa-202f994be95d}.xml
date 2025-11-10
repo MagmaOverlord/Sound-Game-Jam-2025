@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<objects serializationModel="Studio.02.02.00">
+<objects serializationModel="Studio.02.03.00">
 	<object class="ParameterPreset" id="{d77edd60-82e3-4e29-83fa-202f994be95d}">
 		<property name="name">
 			<value>Dist6</value>

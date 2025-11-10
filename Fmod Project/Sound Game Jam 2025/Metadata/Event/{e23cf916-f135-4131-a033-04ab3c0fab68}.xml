@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<objects serializationModel="Studio.02.02.00">
+<objects serializationModel="Studio.02.03.00">
 	<object class="Event" id="{e23cf916-f135-4131-a033-04ab3c0fab68}">
 		<property name="name">
 			<value>6 - Rodes</value>
@@ -153,11 +153,19 @@
 			<destination>{1ec9a2b9-772b-4969-9c34-4348ace15b12}</destination>
 		</relationship>
 		<relationship name="automationPoints">
-			<destination>{8c046c68-0a77-4479-a7fb-1e98449a3c01}</destination>
 			<destination>{190fab8b-736c-4761-9b0c-6d4f993ff1bc}</destination>
+			<destination>{8c046c68-0a77-4479-a7fb-1e98449a3c01}</destination>
 		</relationship>
 	</object>
 	<object class="MixerBusFader" id="{06672e17-6f3f-4fbf-9594-1e81048c8559}" />
+	<object class="AutomationPoint" id="{190fab8b-736c-4761-9b0c-6d4f993ff1bc}">
+		<property name="position">
+			<value>14.983152377386746</value>
+		</property>
+		<property name="value">
+			<value>-80</value>
+		</property>
+	</object>
 	<object class="AutomationPoint" id="{8c046c68-0a77-4479-a7fb-1e98449a3c01}">
 		<property name="position">
 			<value>0</value>
@@ -167,14 +175,6 @@
 		</property>
 		<property name="curveShape">
 			<value>0.416248053</value>
-		</property>
-	</object>
-	<object class="AutomationPoint" id="{190fab8b-736c-4761-9b0c-6d4f993ff1bc}">
-		<property name="position">
-			<value>14.983152377386746</value>
-		</property>
-		<property name="value">
-			<value>-80</value>
 		</property>
 	</object>
 </objects>

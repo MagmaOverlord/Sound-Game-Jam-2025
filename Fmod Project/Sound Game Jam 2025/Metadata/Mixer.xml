@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<objects serializationModel="Studio.02.02.00">
+<objects serializationModel="Studio.02.03.00">
 	<object class="Mixer" id="{de2694a7-85ae-4b03-8a3b-59c936e4a842}">
 		<relationship name="masterBus">
 			<destination>{191934ed-a67c-4276-820d-99f79b1ddf76}</destination>
