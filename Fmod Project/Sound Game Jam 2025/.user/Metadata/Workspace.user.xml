@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<objects serializationModel="Studio.02.02.00">
+<objects serializationModel="Studio.02.03.00">
 	<object class="Workspace" id="{d85b318e-ae62-4711-a195-0bd23af3d25f}">
 		<relationship name="projectSettings">
 			<destination>{5d8865a8-3dbb-4239-b6af-a924847aabdc}</destination>
@@ -9,8 +9,11 @@
 		</relationship>
 	</object>
 	<object class="ProjectSettings" id="{5d8865a8-3dbb-4239-b6af-a924847aabdc}">
+		<property name="openWindows">
+			<value>Event Editor 1</value>
+		</property>
 		<property name="windowLayout">
-			<value>AAAAAQAAACAAUAByAGUAcwBlAHQAIABCAHIAbwB3AHMAZQByACAAMQAAAEIB2dDLAAMAAAAABdAAAAExAAAHYQAABCAAAAXRAAABUAAAB2AAAAQfAAAAAAAAAAANcAAABdEAAAFQAAAHYAAABB8=</value>
+			<value>AAAAAgAAACAAUAByAGUAcwBlAHQAIABCAHIAbwB3AHMAZQByACAAMQAAAEIB2dDLAAMAAAAABdAAAAExAAAHYQAABCAAAAXRAAABUAAAB2AAAAQfAAAAAAAAAAANcAAABdEAAAFQAAAHYAAABB8AAAAcAEUAdgBlAG4AdAAgAEUAZABpAHQAbwByACAAMQAAAEIB2dDLAAMAAP/////////4AAANcAAABXAAAAV4AAAByAAACZcAAANrAAAAAAIAAAANcAAAAAAAAAAXAAANbwAABW8=</value>
 		</property>
 		<relationship name="activePlatform">
 			<destination>{4a8dc19d-3db1-4f8e-bdab-639444852126}</destination>

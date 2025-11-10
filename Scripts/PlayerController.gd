@@ -1,4 +1,4 @@
-extends CharacterBody3D
+extends CharacterBody3D 
 
 #constants
 const SPEED: float = 5.0 #movement speed
@@ -24,10 +24,10 @@ var seedSelected = 0
 var t_bob: float = 0.0 #how far along the camera bob we are
 
 #Audio Stuff
-@onready var fmodParam3 : int
-@onready var fmodParam4 : int
-@onready var fmodParam6 : int
-@onready var fmodParam57 : int
+var fmodParam3 : int
+var fmodParam4 : int
+var fmodParam6 : int
+var fmodParam57 : int
 
 func _ready() -> void:
 	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
@@ -89,9 +89,10 @@ func _physics_process(delta) -> void:
 
 #
 func _process(_delta: float) -> void:
+	#Set fmod parameters to distance between player and each matching garden
 	#fmodParam3 = int(global_position.distance_to($"../Gardens/Temp garden for scale".global_position))
-	print(str($FmodEventEmitter3D.get_parameter_by_id(1450633991648769841)))
-	
+	#print(str($FmodEventEmitter3D.get_parameter_by_id(1450633991648769841)))
+	print(str($FmodEventEmitter3D["fmod_parameters/Dist3"]))
 	# ----
 	# Inputs (non-movemeent)
 	# ----

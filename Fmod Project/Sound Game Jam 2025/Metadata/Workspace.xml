@@ -4,6 +4,7 @@
 		<property name="builtBanksOutputDirectory">
 			<value>D:/GitHub/Sound-Game-Jam-2025/FmodBank</value>
 		</property>
+		<property name="builtBanksEncryptionKey" />
 		<relationship name="masterEventFolder">
 			<destination>{76cc2906-3633-4411-b36e-4095ba733188}</destination>
 		</relationship>
