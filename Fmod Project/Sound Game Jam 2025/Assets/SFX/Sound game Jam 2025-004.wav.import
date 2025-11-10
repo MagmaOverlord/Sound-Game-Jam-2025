@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://cvkpii73etojm"
+path="res://.godot/imported/Sound game Jam 2025-004.wav-6aa42381cb9d7af07a2c21338f3b96b4.sample"
+
+[deps]
+
+source_file="res://Fmod Project/Sound Game Jam 2025/Assets/SFX/Sound game Jam 2025-004.wav"
+dest_files=["res://.godot/imported/Sound game Jam 2025-004.wav-6aa42381cb9d7af07a2c21338f3b96b4.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=2
