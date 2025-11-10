@@ -104,15 +104,10 @@ func _physics_process(delta) -> void:
 func _process(_delta: float) -> void:
 	#Set fmod parameters to distance between player and each matching garden
 	#fmodParam3 = int(global_position.distance_to($"../Gardens/Temp garden for scale".global_position))
-<<<<<<< HEAD
 	#print(str($FmodEventEmitter3D.get_parameter_by_id(1450633991648769841)))
 	#print(str($FmodEventEmitter3D["fmod_parameters/Dist3"]))
-	#print(str($FmodEventEmitter3D.get_parameter("Dist3")))
-	print(str($FmodEventEmitter3D.get_event_name()))
-=======
 	print(str($FmodEventEmitter3D.get_parameter("Dist3")))
 	#print(str($FmodEventEmitter3D.get_event_name()))
->>>>>>> StrangeBranchNoRealChanges
 	# ----
 	# Inputs (non-movemeent)
 	# ----
