@@ -90,7 +90,7 @@ grow_horizontal = 2
 grow_vertical = 0
 placeholder_text = "Seed Rhythm: 3"
 
-[node name="FmodEventEmitter3D" type="FmodEventEmitter3D" parent="."]
+[node name="FmodEventEmitter3D - Music" type="FmodEventEmitter3D" parent="."]
 event_name = "event:/Music/Track with Layers"
 event_guid = "{464b461b-75bd-4a93-a144-cdcb0988d67b}"
 
@@ -103,3 +103,19 @@ collision_mask = 2
 
 [node name="PlantDetectionCollision" type="CollisionShape3D" parent="PlantDetection"]
 shape = SubResource("SphereShape3D_t1tke")
+
+[node name="FmodEventEmitter3D - Steps" type="FmodEventEmitter3D" parent="."]
+event_name = "event:/SFX/Steps"
+event_guid = "{92a773f7-4711-45a5-860a-289ef6eb0b21}"
+
+[node name="FmodEventEmitter3D - Shovel" type="FmodEventEmitter3D" parent="."]
+event_name = "event:/SFX/Shovel"
+event_guid = "{aa5c1fdd-3072-4d70-82bd-82fc7ca328e5}"
+
+[node name="FmodEventEmitter3D - Dirt" type="FmodEventEmitter3D" parent="."]
+event_name = "event:/SFX/Dirt"
+event_guid = "{1ad0f341-7a23-4522-9ecf-90e956d5f8c8}"
+
+[node name="FmodEventEmitter3D - Water" type="FmodEventEmitter3D" parent="."]
+event_name = "event:/SFX/Water"
+event_guid = "{c668ffea-0cc1-4b74-841e-34118b550d79}"

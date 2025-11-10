@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://56xto5v1mg1i"
+path="res://.godot/imported/dirt5.wav-bd90d656ec17b4a8c397805f51beea9f.sample"
+
+[deps]
+
+source_file="res://Fmod Project/Sound Game Jam 2025/Assets/SFX/dirt5.wav"
+dest_files=["res://.godot/imported/dirt5.wav-bd90d656ec17b4a8c397805f51beea9f.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=2
